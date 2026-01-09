@@ -283,5 +283,10 @@
     "quote": "Add Sentry self hosted, connect @clawdbot, have it pull issues via api, let it triage the issues and self fix what it can and merge and push where it is 90% confident.",
     "author": "therno",
     "url": "https://x.com/therno/status/2007931261948510454"
+  },
+  {
+    "quote": "Using @clawdbot for a week now and it genuinely feels like early AGI. The gap between 'what I can imagine' and 'what actually works' has never been smaller.",
+    "author": "tobi_bsf",
+    "url": "https://x.com/tobi_bsf/status/2008888825217527924"
   }
 ]
