@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout installer
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
       - name: Build git smoke image
         run: docker build -t clawdbot-install-git-smoke:ci -f scripts/docker/install-sh-git-smoke/Dockerfile .
@@ -20,4 +20,3 @@ jobs:
           CLAWDBOT_NO_ONBOARD: "1"
           CLAWDBOT_NO_PROMPT: "1"
         run: docker run --rm -t -e CLAWDBOT_NO_ONBOARD -e CLAWDBOT_NO_PROMPT clawdbot-install-git-smoke:ci
-
