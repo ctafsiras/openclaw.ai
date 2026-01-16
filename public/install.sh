@@ -18,6 +18,8 @@ NC='\033[0m' # No Color
 
 DEFAULT_TAGLINE="All your chats, one Clawdbot."
 
+ORIGINAL_PATH="${PATH:-}"
+
 TMPFILES=()
 cleanup_tmpfiles() {
     local f
@@ -176,6 +178,7 @@ GIT_DIR_DEFAULT="${HOME}/clawdbot"
 GIT_DIR=${CLAWDBOT_GIT_DIR:-$GIT_DIR_DEFAULT}
 GIT_UPDATE=${CLAWDBOT_GIT_UPDATE:-1}
 SHARP_IGNORE_GLOBAL_LIBVIPS="${SHARP_IGNORE_GLOBAL_LIBVIPS:-1}"
+CLAWDBOT_BIN=""
 HELP=0
 
 print_usage() {
@@ -463,7 +466,7 @@ fix_npm_permissions() {
 
 # Check for existing Clawdbot installation
 check_existing_clawdbot() {
-    if command -v clawdbot &> /dev/null; then
+    if [[ -n "$(type -P clawdbot 2>/dev/null || true)" ]]; then
         echo -e "${WARN}→${NC} Existing Clawdbot installation detected"
         return 0
     fi
@@ -503,6 +506,140 @@ ensure_user_local_bin_on_path() {
             echo "$path_line" >> "$rc"
         fi
     done
+}
+
+npm_global_bin_dir() {
+    local bin=""
+    bin="$(npm bin -g 2>/dev/null || true)"
+    if [[ -n "$bin" ]]; then
+        echo "$bin"
+        return 0
+    fi
+
+    local prefix=""
+    prefix="$(npm prefix -g 2>/dev/null || true)"
+    if [[ -n "$prefix" ]]; then
+        echo "${prefix}/bin"
+        return 0
+    fi
+
+    echo ""
+    return 1
+}
+
+refresh_shell_command_cache() {
+    hash -r 2>/dev/null || true
+}
+
+path_has_dir() {
+    local path="$1"
+    local dir="${2%/}"
+    if [[ -z "$dir" ]]; then
+        return 1
+    fi
+    case ":${path}:" in
+        *":${dir}:"*) return 0 ;;
+        *) return 1 ;;
+    esac
+}
+
+warn_shell_path_missing_dir() {
+    local dir="${1%/}"
+    local label="$2"
+    if [[ -z "$dir" ]]; then
+        return 0
+    fi
+    if path_has_dir "$ORIGINAL_PATH" "$dir"; then
+        return 0
+    fi
+
+    echo ""
+    echo -e "${WARN}→${NC} PATH warning: missing ${label}: ${INFO}${dir}${NC}"
+    echo -e "This can make ${INFO}clawdbot${NC} show as “command not found” in new terminals."
+    echo -e "Fix (zsh: ~/.zshrc, bash: ~/.bashrc):"
+    echo -e "  export PATH=\"${dir}:\\$PATH\""
+    echo -e "Docs: ${INFO}https://docs.clawd.bot/install/node${NC}"
+}
+
+ensure_npm_global_bin_on_path() {
+    local bin_dir=""
+    bin_dir="$(npm_global_bin_dir || true)"
+    if [[ -n "$bin_dir" ]]; then
+        export PATH="${bin_dir}:$PATH"
+    fi
+}
+
+maybe_nodenv_rehash() {
+    if command -v nodenv &> /dev/null; then
+        nodenv rehash >/dev/null 2>&1 || true
+    fi
+}
+
+warn_clawdbot_not_found() {
+    echo -e "${WARN}→${NC} Installed, but ${INFO}clawdbot${NC} is not discoverable on PATH in this shell."
+    echo -e "Try: ${INFO}hash -r${NC} (bash) or ${INFO}rehash${NC} (zsh), then retry."
+    echo -e "Docs: ${INFO}https://docs.clawd.bot/install/node${NC}"
+    local t=""
+    t="$(type -t clawdbot 2>/dev/null || true)"
+    if [[ "$t" == "alias" || "$t" == "function" ]]; then
+        echo -e "${WARN}→${NC} Found a shell ${INFO}${t}${NC} named ${INFO}clawdbot${NC}; it may shadow the real binary."
+    fi
+    if command -v nodenv &> /dev/null; then
+        echo -e "Using nodenv? Run: ${INFO}nodenv rehash${NC}"
+    fi
+
+    local npm_prefix=""
+    npm_prefix="$(npm prefix -g 2>/dev/null || true)"
+    local npm_bin=""
+    npm_bin="$(npm_global_bin_dir 2>/dev/null || true)"
+    if [[ -n "$npm_prefix" ]]; then
+        echo -e "npm prefix -g: ${INFO}${npm_prefix}${NC}"
+    fi
+    if [[ -n "$npm_bin" ]]; then
+        echo -e "npm bin -g: ${INFO}${npm_bin}${NC}"
+        echo -e "If needed: ${INFO}export PATH=\"${npm_bin}:\\$PATH\"${NC}"
+    fi
+}
+
+resolve_clawdbot_bin() {
+    refresh_shell_command_cache
+    local resolved=""
+    resolved="$(type -P clawdbot 2>/dev/null || true)"
+    if [[ -n "$resolved" && -x "$resolved" ]]; then
+        echo "$resolved"
+        return 0
+    fi
+
+    ensure_npm_global_bin_on_path
+    refresh_shell_command_cache
+    resolved="$(type -P clawdbot 2>/dev/null || true)"
+    if [[ -n "$resolved" && -x "$resolved" ]]; then
+        echo "$resolved"
+        return 0
+    fi
+
+    local npm_bin=""
+    npm_bin="$(npm_global_bin_dir || true)"
+    if [[ -n "$npm_bin" && -x "${npm_bin}/clawdbot" ]]; then
+        echo "${npm_bin}/clawdbot"
+        return 0
+    fi
+
+    maybe_nodenv_rehash
+    refresh_shell_command_cache
+    resolved="$(type -P clawdbot 2>/dev/null || true)"
+    if [[ -n "$resolved" && -x "$resolved" ]]; then
+        echo "$resolved"
+        return 0
+    fi
+
+    if [[ -n "$npm_bin" && -x "${npm_bin}/clawdbot" ]]; then
+        echo "${npm_bin}/clawdbot"
+        return 0
+    fi
+
+    echo ""
+    return 1
 }
 
 install_clawdbot_from_git() {
@@ -574,7 +711,16 @@ install_clawdbot() {
 # Run doctor for migrations (safe, non-interactive)
 run_doctor() {
     echo -e "${WARN}→${NC} Running doctor to migrate settings..."
-    clawdbot doctor --non-interactive || true
+    local claw="${CLAWDBOT_BIN:-}"
+    if [[ -z "$claw" ]]; then
+        claw="$(resolve_clawdbot_bin || true)"
+    fi
+    if [[ -z "$claw" ]]; then
+        echo -e "${WARN}→${NC} Skipping doctor: ${INFO}clawdbot${NC} not on PATH yet."
+        warn_clawdbot_not_found
+        return 0
+    fi
+    "$claw" doctor --non-interactive || true
     echo -e "${SUCCESS}✓${NC} Migration complete"
 }
 
@@ -607,7 +753,17 @@ run_bootstrap_onboarding_if_needed() {
     fi
 
     echo -e "${WARN}→${NC} BOOTSTRAP.md found at ${INFO}${bootstrap}${NC}; starting onboarding..."
-    clawdbot onboard || {
+    local claw="${CLAWDBOT_BIN:-}"
+    if [[ -z "$claw" ]]; then
+        claw="$(resolve_clawdbot_bin || true)"
+    fi
+    if [[ -z "$claw" ]]; then
+        echo -e "${WARN}→${NC} BOOTSTRAP.md found, but ${INFO}clawdbot${NC} not on PATH yet; skipping onboarding."
+        warn_clawdbot_not_found
+        return
+    fi
+
+    "$claw" onboard || {
         echo -e "${ERROR}Onboarding failed; BOOTSTRAP.md still present. Re-run ${INFO}clawdbot onboard${ERROR}.${NC}"
         return
     }
@@ -615,8 +771,12 @@ run_bootstrap_onboarding_if_needed() {
 
 resolve_clawdbot_version() {
     local version=""
-    if command -v clawdbot &> /dev/null; then
-        version=$(clawdbot --version 2>/dev/null | head -n 1 | tr -d '\r')
+    local claw="${CLAWDBOT_BIN:-}"
+    if [[ -z "$claw" ]] && command -v clawdbot &> /dev/null; then
+        claw="$(command -v clawdbot)"
+    fi
+    if [[ -n "$claw" ]]; then
+        version=$("$claw" --version 2>/dev/null | head -n 1 | tr -d '\r')
     fi
     if [[ -z "$version" ]]; then
         local npm_root=""
@@ -717,6 +877,20 @@ EOF
         install_clawdbot
     fi
 
+    CLAWDBOT_BIN="$(resolve_clawdbot_bin || true)"
+
+    # PATH warning: installs can succeed while the user's login shell still lacks npm's global bin dir.
+    local npm_bin=""
+    npm_bin="$(npm_global_bin_dir || true)"
+    if [[ "$INSTALL_METHOD" == "npm" ]]; then
+        warn_shell_path_missing_dir "$npm_bin" "npm global bin dir"
+    fi
+    if [[ "$INSTALL_METHOD" == "git" ]]; then
+        if [[ -x "$HOME/.local/bin/clawdbot" ]]; then
+            warn_shell_path_missing_dir "$HOME/.local/bin" "user-local bin dir (~/.local/bin)"
+        fi
+    fi
+
     # Step 6: Run doctor for migrations on upgrades and git installs
     local run_doctor_after=false
     if [[ "$is_upgrade" == "true" || "$INSTALL_METHOD" == "git" ]]; then
@@ -752,8 +926,17 @@ EOF
             echo -e "Starting setup..."
             echo ""
             if [[ -r /dev/tty && -w /dev/tty ]]; then
+                local claw="${CLAWDBOT_BIN:-}"
+                if [[ -z "$claw" ]]; then
+                    claw="$(resolve_clawdbot_bin || true)"
+                fi
+                if [[ -z "$claw" ]]; then
+                    echo -e "${WARN}→${NC} Skipping onboarding: ${INFO}clawdbot${NC} not on PATH yet."
+                    warn_clawdbot_not_found
+                    return 0
+                fi
                 exec </dev/tty
-                exec clawdbot onboard
+                exec "$claw" onboard
             fi
             echo -e "${WARN}→${NC} No TTY available; skipping onboarding."
             echo -e "Run ${INFO}clawdbot onboard${NC} later."
@@ -762,7 +945,11 @@ EOF
     fi
 
     if command -v clawdbot &> /dev/null; then
-        if clawdbot daemon status >/dev/null 2>&1; then
+        local claw="${CLAWDBOT_BIN:-}"
+        if [[ -z "$claw" ]]; then
+            claw="$(resolve_clawdbot_bin || true)"
+        fi
+        if [[ -n "$claw" ]] && "$claw" daemon status >/dev/null 2>&1; then
             echo -e "${INFO}i${NC} Gateway daemon detected; restart with: ${INFO}clawdbot daemon restart${NC}"
         fi
     fi
@@ -771,5 +958,7 @@ EOF
     echo -e "FAQ: ${INFO}https://docs.clawd.bot/start/faq${NC}"
 }
 
-parse_args "$@"
-main
+if [[ "${CLAWDBOT_INSTALL_SH_NO_RUN:-0}" != "1" ]]; then
+    parse_args "$@"
+    main
+fi

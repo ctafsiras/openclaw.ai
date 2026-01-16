@@ -19,6 +19,15 @@ jobs:
       - name: ShellCheck
         run: shellcheck $(git ls-files '*.sh')
 
+  install-sh-unit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - name: Unit tests (install.sh)
+        run: bash scripts/test-install-sh-unit.sh
+
   install-smoke:
     runs-on: ubuntu-latest
     steps:
