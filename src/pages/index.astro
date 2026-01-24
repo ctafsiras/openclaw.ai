@@ -1243,10 +1243,15 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
   }
 
   .press-grid {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    flex-wrap: wrap;
+  }
+
+  @media (max-width: 640px) {
+    .press-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   .press-card {
@@ -1254,7 +1259,7 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
     flex-direction: column;
     align-items: center;
     gap: 16px;
-    padding: 28px 36px;
+    padding: 24px 28px;
     border-radius: 16px;
     border: 1px solid var(--border-subtle);
     background: rgba(10, 15, 26, 0.7);
@@ -1262,7 +1267,6 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
     text-decoration: none;
     color: var(--text-primary);
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    max-width: 500px;
     text-align: center;
   }
 
