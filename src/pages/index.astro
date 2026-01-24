@@ -677,6 +677,34 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
       </a>
     </nav>
 
+    <!-- Newsletter Signup -->
+    <section class="newsletter">
+      <div class="newsletter-content">
+        <h2 class="newsletter-title">
+          <span class="claw-accent">⟩</span> Stay in the Loop
+        </h2>
+        <p class="newsletter-desc">Get updates on new features, integrations, and lobster wisdom. No spam, unsubscribe anytime.</p>
+        <form class="newsletter-form" action="https://buttondown.com/api/emails/embed-subscribe/steipete" method="post" target="_blank">
+          <input type="hidden" name="tag" value="clawdbot" />
+          <input
+            type="email"
+            name="email"
+            placeholder="your@email.com"
+            required
+            class="newsletter-input"
+            aria-label="Email address"
+          />
+          <button type="submit" class="newsletter-btn">
+            Subscribe
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
       <p>Built by <a href="https://clawd.me" target="_blank" rel="noopener">Clawd</a> 🦞, a space lobster AI with a <a href="https://soul.md" target="_blank" rel="noopener">soul</a>, by <a href="https://steipete.me" target="_blank" rel="noopener">Peter Steinberger</a> & <a href="https://github.com/clawdbot/clawdbot#community" target="_blank" rel="noopener">community</a>.</p>
@@ -941,6 +969,125 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
   .cta-sub {
     font-size: 0.8rem;
     color: var(--text-muted);
+  }
+
+  /* Newsletter */
+  .newsletter {
+    margin-bottom: 56px;
+    animation: fadeInUp 0.8s ease-out 0.7s both;
+  }
+
+  .newsletter-content {
+    text-align: center;
+    padding: 40px 32px;
+    border-radius: 20px;
+    border: 1px solid var(--border-subtle);
+    background: linear-gradient(135deg, rgba(255, 77, 77, 0.05) 0%, rgba(10, 15, 26, 0.8) 50%, rgba(0, 229, 204, 0.03) 100%);
+    backdrop-filter: blur(12px);
+  }
+
+  .newsletter-title {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .newsletter-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: 12px;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .newsletter-input {
+    flex: 1;
+    padding: 14px 18px;
+    border-radius: 12px;
+    border: 1px solid var(--border-subtle);
+    background: rgba(10, 15, 26, 0.8);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.25s ease;
+  }
+
+  .newsletter-input::placeholder {
+    color: var(--text-muted);
+  }
+
+  .newsletter-input:focus {
+    border-color: var(--coral-bright);
+    box-shadow: 0 0 0 3px rgba(255, 77, 77, 0.15);
+  }
+
+  .newsletter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 24px;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, var(--coral-bright) 0%, var(--coral-dark) 100%);
+    color: white;
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(255, 77, 77, 0.25);
+  }
+
+  .newsletter-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(255, 77, 77, 0.35);
+  }
+
+  .newsletter-btn:active {
+    transform: translateY(0);
+  }
+
+  .newsletter-btn svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.2s ease;
+  }
+
+  .newsletter-btn:hover svg {
+    transform: translateX(3px);
+  }
+
+  @media (max-width: 480px) {
+    .newsletter-content {
+      padding: 28px 20px;
+    }
+
+    .newsletter-form {
+      flex-direction: column;
+    }
+
+    .newsletter-input {
+      width: 100%;
+    }
+
+    .newsletter-btn {
+      width: 100%;
+      justify-content: center;
+    }
   }
 
   /* Features */
