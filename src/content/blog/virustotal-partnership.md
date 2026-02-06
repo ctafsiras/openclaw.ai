@@ -47,12 +47,13 @@ When a skill is published to ClawHub:
 2. **Hash Computation** — A SHA-256 hash is computed for the entire bundle, creating a unique fingerprint
 3. **VirusTotal Lookup** — The hash is checked against VirusTotal's database. If the file exists with a Code Insight verdict, results are returned immediately
 4. **Upload & Analysis** — If not found (or no AI analysis exists), the bundle is uploaded to VirusTotal for fresh scanning via their v3 API
-5. **Code Insight** — VirusTotal's LLM-powered Code Insight analyzes what the code actually does, catching obfuscated and novel threats that signature-based scanning misses
-6. **Auto-Approval** — Skills with a "benign" Code Insight verdict are automatically approved. Anything flagged as malicious or suspicious requires manual review
+5. **Code Insight** — VirusTotal's LLM-powered Code Insight (powered by Gemini) performs a security-focused analysis of the entire skill package, starting from SKILL.md and including any referenced scripts or resources. It doesn't just look at what the skill claims to do—it summarizes what the code actually does from a security perspective: whether it downloads and executes external code, accesses sensitive data, performs network operations, or embeds instructions that could coerce the agent into unsafe behavior
+6. **Auto-Approval** — Skills with a "benign" Code Insight verdict are automatically approved. Anything flagged as suspicious is automatically marked with a warning. Skills flagged as malicious are instantly blocked from download
+7. **Daily Re-scans** — All active skills are re-scanned daily to detect if a previously clean skill becomes malicious
 
 Scan results are displayed on every skill page and in version history, with direct links to the full VirusTotal report.
 
-This is the same approach VirusTotal uses with [Hugging Face](https://huggingface.co/blog/virustotal) to protect ML models and datasets.
+VirusTotal already protects the [Hugging Face](https://huggingface.co/blog/virustotal) ecosystem using hash-based lookups against their threat intelligence database. Our integration goes further—we upload full skill bundles for Code Insight analysis, giving the AI a complete picture of the skill's behavior rather than just matching known signatures.
 
 ## What This Is—And What It Isn't
 
@@ -75,7 +76,7 @@ This partnership is part of a broader security initiative at OpenClaw. In the co
 
 - **A comprehensive threat model** for the OpenClaw ecosystem
 - **A public security roadmap** tracking defensive engineering goals
-- **Details on our code review** covering the entire codebase
+- **Details on our security audit** covering the entire codebase
 - **A formal security reporting process** with defined SLAs
 
 We've brought on [Jamieson O'Reilly](https://twitter.com/theonejvo) (founder of Dvuln, co-founder of Aether AI, CREST Advisory Council member) as lead security advisor to guide this program.
@@ -88,8 +89,9 @@ If you publish skills to ClawHub, your code will now be scanned automatically. H
 
 1. Your skill is published and the VT scan runs asynchronously
 2. If the scan returns a "benign" verdict, your skill is automatically approved
-3. If something is flagged, your skill remains in a pending state until reviewed
-4. You can check scan status on your skill's detail page with a direct link to the full VirusTotal report
+3. If something is flagged as suspicious, your skill is marked with a warning but remains available for transparency
+4. If flagged as malicious, your skill is instantly blocked from download
+5. You can check scan status on your skill's detail page with a direct link to the full VirusTotal report
 
 We expect some false positives initially—security tooling isn't perfect. If your skill is incorrectly flagged, reach out to us at security@openclaw.ai and we'll review it.
 
