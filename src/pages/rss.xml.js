@@ -6,7 +6,8 @@ export async function GET(context) {
 
   return rss({
     title: 'OpenClaw Blog',
-    description: 'Updates and news from OpenClaw — The AI that actually does things',
+    // original: description: 'Updates and news from OpenClaw — The AI that actually does things',
+    description: 'ওপেনক্ল (OpenClaw) এর আপডেট এবং খবরাখবর — এমন এক এআই যেটা আসলেই কাজের কাজ করে (বাকিগুলোর মতো শুধু বকচর করে না)',
     site: context.site ?? 'https://openclaw.ai',
     items: posts.map((post) => ({
       title: post.data.title,

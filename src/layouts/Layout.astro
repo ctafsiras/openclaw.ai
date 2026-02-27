@@ -9,7 +9,8 @@ interface Props {
 
 const {
   title,
-  description = "OpenClaw — The AI that actually does things. Your personal assistant on any platform.",
+  // original: description = "OpenClaw — The AI that actually does things. Your personal assistant on any platform.",
+  description = "OpenClaw — The AI that actually does things. Your personal assistant on any platform. ওপেনক্ল (OpenClaw) — এমন এক এআই যেটা আসলেই কাজের কাজ করে। যেকোনো প্ল্যাটফর্মে আপনার নিজের চামচা।",
   canonicalUrl = "https://openclaw.ai/",
 } = Astro.props;
 ---
@@ -285,8 +286,10 @@ const {
           root.style.colorScheme = theme;
           const isDark = theme === 'dark';
           icon.textContent = isDark ? '☀' : '☾';
-          toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
-          toggle.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+          // original: toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+          // original: toggle.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+          toggle.setAttribute('aria-label', isDark ? 'আলোতে আসুন (Light Mode)' : 'অন্ধকারে যান (Dark Mode)');
+          toggle.setAttribute('title', isDark ? 'আলোতে আসুন (Light Mode)' : 'অন্ধকারে যান (Dark Mode)');
           if (persist) {
             localStorage.setItem(key, theme);
           }

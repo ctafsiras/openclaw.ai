@@ -43,47 +43,57 @@ scope:
 
 tactics:
   - id: recon
-    name: Reconnaissance
+    # original: name: Reconnaissance
+    name: রেকি করা (Reconnaissance)
     atlas: AML.TA0002
     color: "#6b7280"
   - id: access
-    name: Initial Access
+    # original: name: Initial Access
+    name: প্রথম দরজা ভাঙা (Initial Access)
     atlas: AML.TA0004
     color: "#8b5cf6"
   - id: execution
-    name: Execution
+    # original: name: Execution
+    name: কাম তামাম করা (Execution)
     atlas: AML.TA0005
     color: "#ef4444"
   - id: persistence
-    name: Persistence
+    # original: name: Persistence
+    name: ঘাপটি মেরে বসে থাকা (Persistence)
     atlas: AML.TA0006
     color: "#f97316"
   - id: evasion
-    name: Defense Evasion
+    # original: name: Defense Evasion
+    name: পুলিশকে ধোঁকা দেওয়া (Defense Evasion)
     atlas: AML.TA0007
     color: "#eab308"
   - id: discovery
-    name: Discovery
+    # original: name: Discovery
+    name: খোঁজখবর নেওয়া (Discovery)
     atlas: AML.TA0008
     color: "#22c55e"
   - id: exfil
-    name: Exfiltration
+    # original: name: Exfiltration
+    name: মাল নিয়ে ভাগা (Exfiltration)
     atlas: AML.TA0010
     color: "#3b82f6"
   - id: impact
-    name: Impact
+    # original: name: Impact
+    name: বাঁশ দেওয়া (Impact)
     atlas: AML.TA0011
     color: "#ec4899"
 
 threats:
   # ── Reconnaissance (AML.TA0002) ────────────────────────────
   - id: T-RECON-001
-    name: Agent Endpoint Discovery
+    # original: name: Agent Endpoint Discovery
+    name: এজেন্ট এন্ডপয়েন্ট খুঁজে বের করা
     tactic: Reconnaissance
     atlas: AML.T0006
     risk: Medium
     category: recon
-    description: Attacker scans for exposed OpenClaw gateway endpoints
+    # original: description: Attacker scans for exposed OpenClaw gateway endpoints
+    description: হ্যাকার ওপেনক্ল গেটওয়ের খোলা দরজা খুঁজে বেড়ায়
     attackVector: Network scanning, shodan queries, DNS enumeration
     affected: Gateway, exposed API endpoints
     mitigations: Tailscale auth option, bind to loopback by default
@@ -91,12 +101,14 @@ threats:
     recommendations: Document secure deployment, add rate limiting on discovery endpoints
 
   - id: T-RECON-002
-    name: Channel Integration Probing
+    # original: name: Channel Integration Probing
+    name: চ্যানেল ইন্টিগ্রেশনে গুঁতাগুঁতি
     tactic: Reconnaissance
     atlas: AML.T0006
     risk: Low
     category: recon
-    description: Attacker probes messaging channels to identify AI-managed accounts
+    # original: description: Attacker probes messaging channels to identify AI-managed accounts
+    description: হ্যাকার মেসেজিং চ্যানেলগুলোতে গুঁতা দিয়ে দেখে কোনটা এআই চালায়
     attackVector: Sending test messages, observing response patterns
     affected: All channel integrations
     mitigations: None specific
@@ -104,12 +116,14 @@ threats:
     recommendations: Consider response timing randomization
 
   - id: T-RECON-003
-    name: Skill Capability Reconnaissance
+    # original: name: Skill Capability Reconnaissance
+    name: স্কিলের ক্ষমতা মাপা
     tactic: Reconnaissance
     atlas: AML.T0006
     risk: Low
     category: recon
-    description: Attacker analyzes ClawHub to identify high-value targets and popular skills
+    # original: description: Attacker analyzes ClawHub to identify high-value targets and popular skills
+    description: হ্যাকার ক্ল-হাব ঘেঁটে দেখে কোন স্কিলগুলো বেশি চলে আর কাদের টার্গেট করা যায়
     attackVector: Browsing ClawHub, analyzing download stats, identifying skills with sensitive permissions
     affected: ClawHub public listings
     mitigations: None - public by design
@@ -118,12 +132,14 @@ threats:
 
   # ── Initial Access (AML.TA0004) ────────────────────────────
   - id: T-ACCESS-001
-    name: Pairing Code Interception
+    # original: name: Pairing Code Interception
+    name: পেয়ারিং কোড চুরি করা
     tactic: Initial Access
     atlas: AML.T0040
     risk: Medium
     category: access
-    description: Attacker intercepts pairing code during 30s grace period
+    # original: description: Attacker intercepts pairing code during 30s grace period
+    description: ৩০ সেকেন্ডের ফাঁকে হ্যাকার পেয়ারিং কোড মেরে দেয়
     attackVector: Shoulder surfing, network sniffing, social engineering
     affected: Device pairing system
     mitigations: 30s expiry, codes sent via existing channel
@@ -131,12 +147,14 @@ threats:
     recommendations: Reduce grace period, add confirmation step
 
   - id: T-ACCESS-002
-    name: AllowFrom Spoofing
+    # original: name: AllowFrom Spoofing
+    name: সেন্ডার সেজে ধোঁকা দেওয়া
     tactic: Initial Access
     atlas: AML.T0040
     risk: Medium
     category: access
-    description: Attacker spoofs allowed sender identity in channel
+    # original: description: Attacker spoofs allowed sender identity in channel
+    description: হ্যাকার পরিচিত সেন্ডার সেজে চ্যানেলে ঢোকার চেষ্টা করে
     attackVector: Phone number spoofing, username impersonation (channel-dependent)
     affected: AllowFrom validation per channel
     mitigations: Channel-specific identity verification
@@ -144,12 +162,14 @@ threats:
     recommendations: Document channel-specific risks, add cryptographic verification where possible
 
   - id: T-ACCESS-003
-    name: Token Theft
+    # original: name: Token Theft
+    name: টোকেন বা চাবি চুরি
     tactic: Initial Access
     atlas: AML.T0040
     risk: High
     category: access
-    description: Attacker steals authentication tokens from config files
+    # original: description: Attacker steals authentication tokens from config files
+    description: হ্যাকার কনফিগ ফাইল থেকে অথেন্টিকেশন টোকেন বা চাবি চুরি করে
     attackVector: Malware, unauthorized device access, config backup exposure
     affected: ~/.openclaw/credentials/, config storage
     mitigations: File permissions
@@ -157,12 +177,14 @@ threats:
     recommendations: Implement token encryption at rest, add token rotation
 
   - id: T-ACCESS-004
-    name: Malicious Skill as Entry Point
+    # original: name: Malicious Skill as Entry Point
+    name: বাজে স্কিল দিয়ে ঢোকা
     tactic: Initial Access
     atlas: AML.T0010.001
     risk: Critical
     category: access
-    description: User installs malicious skill from ClawHub, granting attacker initial access
+    # original: description: User installs malicious skill from ClawHub, granting attacker initial access
+    description: ইউজার ক্ল-হাব থেকে শয়তান স্কিল ইনস্টল করে হ্যাকারকে ডেকে আনে
     attackVector: Social engineering, typosquatting, fake popular skills, SEO manipulation
     affected: ClawHub discovery, skill installation flow
     mitigations: GitHub account age verification, download stats visibility
@@ -170,12 +192,14 @@ threats:
     recommendations: Prominent security warnings, verified publisher badges, install confirmations
 
   - id: T-ACCESS-005
-    name: Compromised Skill Update
+    # original: name: Compromised Skill Update
+    name: স্কিল আপডেটের নামে বাঁশ
     tactic: Initial Access
     atlas: AML.T0010.001
     risk: High
     category: access
-    description: Attacker compromises legitimate skill and pushes malicious update to existing users
+    # original: description: Attacker compromises legitimate skill and pushes malicious update to existing users
+    description: হ্যাকার ভালো স্কিল হ্যাক করে সেখানে বাজে আপডেট ঢুকিয়ে দেয়
     attackVector: Account takeover of skill publisher, social engineering, credential theft
     affected: ClawHub update mechanism, existing skill installations
     mitigations: Version fingerprinting
@@ -183,12 +207,14 @@ threats:
     recommendations: Update signing, publisher 2FA requirement, update diff review
 
   - id: T-ACCESS-006
-    name: Prompt Injection via Channel
+    # original: name: Prompt Injection via Channel
+    name: চ্যানেলে প্রম্পট ইনজেকশন
     tactic: Initial Access
     atlas: AML.T0051.000
     risk: High
     category: access
-    description: Attacker gains initial access by sending malicious prompts through messaging channel
+    # original: description: Attacker gains initial access by sending malicious prompts through messaging channel
+    description: মেসেজিং চ্যানেলে উল্টাপাল্টা প্রম্পট পাঠিয়ে হ্যাকার অ্যাক্সেস নেয়
     attackVector: Direct messages to agent-managed channels (WhatsApp, Telegram, Discord)
     affected: All channel integrations
     mitigations: AllowFrom lists, pairing requirements
@@ -197,12 +223,14 @@ threats:
 
   # ── Execution (AML.TA0005) ─────────────────────────────────
   - id: T-EXEC-001
-    name: Direct Prompt Injection
+    # original: name: Direct Prompt Injection
+    name: ডাইরেক্ট প্রম্পট ইনজেকশন
     tactic: Execution
     atlas: AML.T0051.000
     risk: Critical
     category: execution
-    description: Attacker sends crafted prompts to manipulate agent behavior
+    # original: description: Attacker sends crafted prompts to manipulate agent behavior
+    description: হ্যাকার এমনভাবে প্রম্পট লেখে যাতে এজেন্ট উল্টাপাল্টা কাজ করে
     attackVector: Channel messages containing adversarial instructions
     affected: Agent LLM, all input surfaces
     mitigations: Pattern detection, external content wrapping
@@ -210,12 +238,14 @@ threats:
     recommendations: Implement multi-layer defense, output validation, user confirmation for sensitive actions
 
   - id: T-EXEC-002
-    name: Indirect Prompt Injection
+    # original: name: Indirect Prompt Injection
+    name: ইনডাইরেক্ট বা ঘুরিয়ে প্রম্পট ইনজেকশন
     tactic: Execution
     atlas: AML.T0051.001
     risk: High
     category: execution
-    description: Attacker embeds malicious instructions in fetched content
+    # original: description: Attacker embeds malicious instructions in fetched content
+    description: হ্যাকার ওয়েবসাইট বা ইমেইলের মধ্যে লুকিয়ে বাজে ইন্সট্রাকশন দেয়
     attackVector: Malicious URLs, poisoned emails, compromised webhooks
     affected: web_fetch, email ingestion, external data sources
     mitigations: Content wrapping with XML tags and security notice
@@ -223,12 +253,14 @@ threats:
     recommendations: Implement content sanitization, separate execution contexts
 
   - id: T-EXEC-003
-    name: Tool Argument Injection
+    # original: name: Tool Argument Injection
+    name: টুলের আর্গুমেন্টে ভেজাল
     tactic: Execution
     atlas: AML.T0051.000
     risk: High
     category: execution
-    description: Attacker manipulates tool arguments through prompt injection
+    # original: description: Attacker manipulates tool arguments through prompt injection
+    description: হ্যাকার প্রম্পট ইনজেকশন দিয়ে টুলের প্যারামিটার বদলে দেয়
     attackVector: Crafted prompts that influence tool parameter values
     affected: All tool invocations
     mitigations: Exec approvals for dangerous commands
@@ -236,12 +268,14 @@ threats:
     recommendations: Implement argument validation, parameterized tool calls
 
   - id: T-EXEC-004
-    name: Exec Approval Bypass
+    # original: name: Exec Approval Bypass
+    name: অনুমোদনের সিস্টেম ফাঁকি দেওয়া
     tactic: Execution
     atlas: AML.T0043
     risk: High
     category: execution
-    description: Attacker crafts commands that bypass approval allowlist
+    # original: description: Attacker crafts commands that bypass approval allowlist
+    description: হ্যাকার এমন কমান্ড বানায় যা অনুমোদনের লিস্ট ফাঁকি দিয়ে চলে যায়
     attackVector: Command obfuscation, alias exploitation, path manipulation
     affected: exec-approvals.ts, command allowlist
     mitigations: Allowlist + ask mode
@@ -249,12 +283,14 @@ threats:
     recommendations: Implement command normalization, expand blocklist
 
   - id: T-EXEC-005
-    name: Malicious Skill Code Execution
+    # original: name: Malicious Skill Code Execution
+    name: শয়তান স্কিলের কোড চালানো
     tactic: Execution
     atlas: AML.T0010.001
     risk: Critical
     category: execution
-    description: Malicious skill executes arbitrary code when loaded by agent
+    # original: description: Malicious skill executes arbitrary code when loaded by agent
+    description: শয়তান স্কিল এজেন্টের পেটে ঢুকে নিজের ইচ্ছেমতো কোড চালায়
     attackVector: Skill contains obfuscated malicious code that runs on load or invocation
     affected: Skill runtime, agent process, host system
     mitigations: Pattern-based moderation (easily bypassed)
@@ -262,12 +298,14 @@ threats:
     recommendations: VirusTotal Code Insight, skill sandboxing, capability-based permissions
 
   - id: T-EXEC-006
-    name: MCP Server Command Injection
+    # original: name: MCP Server Command Injection
+    name: এমসিপি (MCP) সার্ভারে কমান্ড ইনজেকশন
     tactic: Execution
     atlas: AML.T0051.000
     risk: High
     category: execution
-    description: Attacker exploits MCP server to execute commands via tool calls
+    # original: description: Attacker exploits MCP server to execute commands via tool calls
+    description: হ্যাকার এমসিপি সার্ভার ব্যবহার করে টুলের মাধ্যমে কমান্ড এক্সিকিউট করায়
     attackVector: Prompt injection causes agent to invoke MCP tools with malicious arguments
     affected: MCP server integrations, external tool providers
     mitigations: Tool policy enforcement
@@ -276,12 +314,14 @@ threats:
 
   # ── Persistence (AML.TA0006) ───────────────────────────────
   - id: T-PERSIST-001
-    name: Skill-Based Persistence
+    # original: name: Skill-Based Persistence
+    name: স্কিল দিয়ে ঘাঁটি গেড়ে বসা
     tactic: Persistence
     atlas: AML.T0010.001
     risk: Critical
     category: persistence
-    description: Malicious skill remains installed, re-executing across agent restarts
+    # original: description: Malicious skill remains installed, re-executing across agent restarts
+    description: শয়তান স্কিল ইনস্টল হয়েই থাকে, এজেন্ট রিস্টার্ট দিলেও যায় না
     attackVector: Skill persists in user config, loads automatically on agent start
     affected: Skill installation, agent startup
     mitigations: None - skills persist by design
@@ -289,12 +329,14 @@ threats:
     recommendations: Skill integrity verification on load, periodic re-scanning, removal tools
 
   - id: T-PERSIST-002
-    name: Poisoned Skill Update Persistence
+    # original: name: Poisoned Skill Update Persistence
+    name: বিষাক্ত আপডেটের মাধ্যমে থেকে যাওয়া
     tactic: Persistence
     atlas: AML.T0010.001
     risk: High
     category: persistence
-    description: Malicious update to legitimate skill maintains persistent access
+    # original: description: Malicious update to legitimate skill maintains persistent access
+    description: ভালো স্কিলের বাজে আপডেট দিয়ে হ্যাকার সিস্টেমে থেকে যায়
     attackVector: Auto-update pulls compromised version, persists across sessions
     affected: ClawHub versioning, auto-update flows
     mitigations: Version fingerprinting
@@ -302,12 +344,14 @@ threats:
     recommendations: Update signing, version pinning, update notifications
 
   - id: T-PERSIST-003
-    name: Agent Configuration Tampering
+    # original: name: Agent Configuration Tampering
+    name: এজেন্টের কনফিগারেশন ঘাঁটাঘাঁটি
     tactic: Persistence
     atlas: AML.T0010.002
     risk: Medium
     category: persistence
-    description: Attacker modifies agent configuration to persist access
+    # original: description: Attacker modifies agent configuration to persist access
+    description: হ্যাকার এজেন্টের কনফিগারেশন বদলে দিয়ে নিজের অ্যাক্সেস ধরে রাখে
     attackVector: Config file modification, settings injection via compromised skill
     affected: Agent config, tool policies, allowlists
     mitigations: File permissions
@@ -315,12 +359,14 @@ threats:
     recommendations: Config integrity verification, audit logging for config changes
 
   - id: T-PERSIST-004
-    name: Stolen Token Persistence
+    # original: name: Stolen Token Persistence
+    name: চুরি করা টোকেন দিয়ে বসে থাকা
     tactic: Persistence
     atlas: AML.T0040
     risk: High
     category: persistence
-    description: Attacker maintains access using stolen authentication tokens
+    # original: description: Attacker maintains access using stolen authentication tokens
+    description: হ্যাকার চুরি করা টোকেন দিয়ে বারবার অ্যাক্সেস নিতে থাকে
     attackVector: Tokens stolen via T-ACCESS-003 used for ongoing access
     affected: Gateway authentication, API access
     mitigations: "None - tokens don't expire by default"
@@ -328,12 +374,14 @@ threats:
     recommendations: Token expiration, rotation policy, anomaly detection
 
   - id: T-PERSIST-005
-    name: Prompt Injection Memory Poisoning
+    # original: name: Prompt Injection Memory Poisoning
+    name: মেমোরিতে বিষ ঢালা (Prompt Injection)
     tactic: Persistence
     atlas: AML.T0051.000
     risk: Medium
     category: persistence
-    description: Attacker injects instructions that persist in agent memory/context
+    # original: description: Attacker injects instructions that persist in agent memory/context
+    description: হ্যাকার এমন ইন্সট্রাকশন দেয় যা এজেন্টের মেমোরিতে গেঁথে থাকে
     attackVector: Inject prompts that modify agent behavior for subsequent interactions
     affected: Session context, agent memory systems
     mitigations: Session isolation per sender
@@ -342,12 +390,14 @@ threats:
 
   # ── Defense Evasion (AML.TA0007) ───────────────────────────
   - id: T-EVADE-001
-    name: Moderation Pattern Bypass
+    # original: name: Moderation Pattern Bypass
+    name: মডারেশন ফাঁকি দেওয়া
     tactic: Defense Evasion
     atlas: AML.T0043
     risk: High
     category: evasion
-    description: Attacker crafts skill content to evade moderation patterns
+    # original: description: Attacker crafts skill content to evade moderation patterns
+    description: হ্যাকার এমনভাবে স্কিল বানায় যা মডারেশনের চোখে ধরা পড়ে না
     attackVector: Unicode homoglyphs, encoding tricks, dynamic loading, code obfuscation
     affected: ClawHub moderation.ts
     mitigations: Pattern-based FLAG_RULES
@@ -355,12 +405,14 @@ threats:
     recommendations: Add behavioral analysis (VirusTotal Code Insight), AST-based detection
 
   - id: T-EVADE-002
-    name: Content Wrapper Escape
+    # original: name: Content Wrapper Escape
+    name: কন্টেন্ট র‍্যাপার থেকে পালানো
     tactic: Defense Evasion
     atlas: AML.T0043
     risk: Medium
     category: evasion
-    description: Attacker crafts content that escapes XML wrapper context
+    # original: description: Attacker crafts content that escapes XML wrapper context
+    description: হ্যাকার এমন কন্টেন্ট বানায় যা XML র‍্যাপারের বাইরে বেরিয়ে আসে
     attackVector: Tag manipulation, context confusion, instruction override
     affected: External content wrapping
     mitigations: XML tags + security notice
@@ -368,12 +420,14 @@ threats:
     recommendations: Multiple wrapper layers, output-side validation
 
   - id: T-EVADE-003
-    name: Approval Prompt Manipulation
+    # original: name: Approval Prompt Manipulation
+    name: অনুমোদনের প্রম্পট ম্যানিপুলেশন
     tactic: Defense Evasion
     atlas: AML.T0043
     risk: Medium
     category: evasion
-    description: Attacker crafts requests that appear benign in approval prompts
+    # original: description: Attacker crafts requests that appear benign in approval prompts
+    description: হ্যাকার এমন রিকোয়েস্ট পাঠায় যা অনুমোদনের সময় ভালো মনে হয়
     attackVector: Misleading command descriptions, hiding malicious flags in long commands
     affected: Exec approval UI, user decision making
     mitigations: Approval prompt shows full command
@@ -381,12 +435,14 @@ threats:
     recommendations: Highlight dangerous flags, command summarization, risk scoring
 
   - id: T-EVADE-004
-    name: Staged Payload Delivery
+    # original: name: Staged Payload Delivery
+    name: ধাপে ধাপে প্যাঁচ লাগানো
     tactic: Defense Evasion
     atlas: AML.T0043
     risk: High
     category: evasion
-    description: Skill downloads malicious payload after passing initial scan
+    # original: description: Skill downloads malicious payload after passing initial scan
+    description: স্কিল প্রথমে ভালো থাকে, পরে স্ক্যান পাস করার পর ভাইরাস নামায়
     attackVector: Clean skill passes moderation, then fetches malicious code at runtime
     affected: ClawHub scanning, skill runtime
     mitigations: None - runtime fetches not monitored
@@ -395,12 +451,14 @@ threats:
 
   # ── Discovery (AML.TA0008) ─────────────────────────────────
   - id: T-DISC-001
-    name: Tool Enumeration
+    # original: name: Tool Enumeration
+    name: টুল গোনাগুন্তি
     tactic: Discovery
     atlas: AML.T0040
     risk: Low
     category: discovery
-    description: Attacker enumerates available tools through prompting
+    # original: description: Attacker enumerates available tools through prompting
+    description: হ্যাকার প্রম্পট করে জেনে নেয় কী কী টুল আছে
     attackVector: "'What tools do you have?' style queries"
     affected: Agent tool registry
     mitigations: None specific
@@ -408,12 +466,14 @@ threats:
     recommendations: Consider tool visibility controls
 
   - id: T-DISC-002
-    name: Session Data Extraction
+    # original: name: Session Data Extraction
+    name: সেশনের তথ্য হাতিয়ে নেওয়া
     tactic: Discovery
     atlas: AML.T0040
     risk: Medium
     category: discovery
-    description: Attacker extracts sensitive data from session context
+    # original: description: Attacker extracts sensitive data from session context
+    description: হ্যাকার সেশনের কথাবার্তা থেকে গোপন তথ্য বের করে নেয়
     attackVector: "'What did we discuss?' queries, context probing"
     affected: Session transcripts, context window
     mitigations: Session isolation per sender
@@ -421,12 +481,14 @@ threats:
     recommendations: Implement sensitive data redaction in context
 
   - id: T-DISC-003
-    name: System Prompt Extraction
+    # original: name: System Prompt Extraction
+    name: সিস্টেম প্রম্পট বের করা
     tactic: Discovery
     atlas: AML.T0040
     risk: Medium
     category: discovery
-    description: Attacker extracts system prompt to understand agent capabilities and restrictions
+    # original: description: Attacker extracts system prompt to understand agent capabilities and restrictions
+    description: হ্যাকার সিস্টেম প্রম্পট বের করে নেয় এজেন্টের নাড়িনক্ষত্র জানার জন্য
     attackVector: Prompt injection asking agent to reveal instructions
     affected: Agent system prompt, security policies
     mitigations: LLM instruction following
@@ -434,12 +496,14 @@ threats:
     recommendations: System prompt hardening, extraction detection
 
   - id: T-DISC-004
-    name: Environment Enumeration
+    # original: name: Environment Enumeration
+    name: এনভায়রনমেন্ট চেক করা
     tactic: Discovery
     atlas: AML.T0040
     risk: Medium
     category: discovery
-    description: Attacker enumerates environment variables and system configuration
+    # original: description: Attacker enumerates environment variables and system configuration
+    description: হ্যাকার সিস্টেমের কনফিগারেশন আর এনভায়রনমেন্ট ভেরিয়েবল চেক করে
     attackVector: Prompt injection causing agent to run env, printenv, or read config files
     affected: Host environment, credentials in env vars
     mitigations: Exec approvals
@@ -448,12 +512,14 @@ threats:
 
   # ── Exfiltration (AML.TA0010) ──────────────────────────────
   - id: T-EXFIL-001
-    name: Data Theft via web_fetch
+    # original: name: Data Theft via web_fetch
+    name: ওয়েব ফেচ (web_fetch) দিয়ে ডেটা চুরি
     tactic: Exfiltration
     atlas: AML.T0009
     risk: High
     category: exfil
-    description: Attacker exfiltrates data by instructing agent to send to external URL
+    # original: description: Attacker exfiltrates data by instructing agent to send to external URL
+    description: হ্যাকার এজেন্টকে দিয়ে বাইরের কোনো লিংকে ডেটা পাঠিয়ে দেয়
     attackVector: Prompt injection causing agent to POST data to attacker server
     affected: web_fetch tool
     mitigations: SSRF blocking for internal networks
@@ -461,12 +527,14 @@ threats:
     recommendations: Implement URL allowlisting, data classification awareness
 
   - id: T-EXFIL-002
-    name: Unauthorized Message Sending
+    # original: name: Unauthorized Message Sending
+    name: না বলে মেসেজ পাঠানো
     tactic: Exfiltration
     atlas: AML.T0009
     risk: Medium
     category: exfil
-    description: Attacker causes agent to send messages containing sensitive data
+    # original: description: Attacker causes agent to send messages containing sensitive data
+    description: হ্যাকার এজেন্টকে দিয়ে গোপন তথ্যসহ মেসেজ পাঠায়
     attackVector: Prompt injection causing agent to message attacker
     affected: Message tool, channel integrations
     mitigations: Outbound messaging gating
@@ -474,12 +542,14 @@ threats:
     recommendations: Require explicit confirmation for new recipients
 
   - id: T-EXFIL-003
-    name: Credential Harvesting via Skill
+    # original: name: Credential Harvesting via Skill
+    name: স্কিল দিয়ে পাসওয়ার্ড চুরি
     tactic: Exfiltration
     atlas: AML.T0009
     risk: Critical
     category: exfil
-    description: Malicious skill harvests credentials from agent context and environment
+    # original: description: Malicious skill harvests credentials from agent context and environment
+    description: শয়তান স্কিল এজেন্টের পেট থেকে সব পাসওয়ার্ড আর চাবি বের করে নেয়
     attackVector: Skill code reads environment variables, config files, API keys
     affected: Skill execution environment, ~/.openclaw/
     mitigations: None specific to skills
@@ -487,12 +557,14 @@ threats:
     recommendations: Skill sandboxing, credential isolation, capability-based access
 
   - id: T-EXFIL-004
-    name: Transcript Exfiltration
+    # original: name: Transcript Exfiltration
+    name: চ্যাটের হিস্ট্রি পাচার করা
     tactic: Exfiltration
     atlas: AML.T0009
     risk: High
     category: exfil
-    description: Attacker exfiltrates conversation transcripts containing sensitive data
+    # original: description: Attacker exfiltrates conversation transcripts containing sensitive data
+    description: হ্যাকার চ্যাটের সব হিস্ট্রি (যেখানে গোপন কথা থাকতে পারে) পাচার করে দেয়
     attackVector: Skill or prompt injection reads and sends transcript files
     affected: Session transcripts, ~/.openclaw/sessions/
     mitigations: File permissions
@@ -501,12 +573,14 @@ threats:
 
   # ── Impact (AML.TA0011) ────────────────────────────────────
   - id: T-IMPACT-001
-    name: Unauthorized Command Execution
+    # original: name: Unauthorized Command Execution
+    name: হুটহাট কমান্ড চালানো
     tactic: Impact
     atlas: AML.T0031
     risk: Critical
     category: impact
-    description: Attacker executes arbitrary commands on user system
+    # original: description: Attacker executes arbitrary commands on user system
+    description: হ্যাকার ইউজারের সিস্টেমে যা খুশি তাই কমান্ড চালায়
     attackVector: Prompt injection combined with exec approval bypass
     affected: Bash tool, command execution, host system
     mitigations: Exec approvals, Docker sandbox option
@@ -514,12 +588,14 @@ threats:
     recommendations: Default to sandbox, improve approval UX
 
   - id: T-IMPACT-002
-    name: Resource Exhaustion (DoS)
+    # original: name: Resource Exhaustion (DoS)
+    name: সব রিসোর্স চুষে খাওয়া (DoS)
     tactic: Impact
     atlas: AML.T0031
     risk: High
     category: impact
-    description: Attacker exhausts API credits or compute resources
+    # original: description: Attacker exhausts API credits or compute resources
+    description: হ্যাকার আপনার সব এআই ক্রেডিট আর কম্পিউটারের জান বের করে নেয়
     attackVector: Automated message flooding, expensive tool calls, infinite loops
     affected: Gateway, agent sessions, API provider, user billing
     mitigations: None
@@ -527,12 +603,14 @@ threats:
     recommendations: Implement per-sender rate limits, cost budgets, circuit breakers
 
   - id: T-IMPACT-003
-    name: Reputation Damage
+    # original: name: Reputation Damage
+    name: ইজ্জত ফালুদা করা
     tactic: Impact
     atlas: AML.T0031
     risk: Medium
     category: impact
-    description: Attacker causes agent to send harmful/offensive content
+    # original: description: Attacker causes agent to send harmful/offensive content
+    description: হ্যাকার এজেন্টকে দিয়ে আজেবাজে মেসেজ পাঠিয়ে আপনার মানসম্মান ডোবায়
     attackVector: Prompt injection causing inappropriate responses to contacts
     affected: Output generation, channel messaging, user reputation
     mitigations: LLM provider content policies
@@ -540,12 +618,14 @@ threats:
     recommendations: Output filtering layer, user controls, message review queue
 
   - id: T-IMPACT-004
-    name: Data Destruction
+    # original: name: Data Destruction
+    name: ডেটা ধ্বংস করা
     tactic: Impact
     atlas: AML.T0031
     risk: High
     category: impact
-    description: Attacker causes agent to delete or corrupt user data
+    # original: description: Attacker causes agent to delete or corrupt user data
+    description: হ্যাকার এজেন্টকে দিয়ে আপনার সব ফাইল বা ডেটা ডিলিট করিয়ে দেয়
     attackVector: Prompt injection causing rm, format, or destructive database operations
     affected: User files, databases, configurations
     mitigations: Exec approvals for destructive commands
@@ -553,12 +633,14 @@ threats:
     recommendations: Destructive command confirmation, backup recommendations, undo capability
 
   - id: T-IMPACT-005
-    name: Financial Fraud via Agent
+    # original: name: Financial Fraud via Agent
+    name: এজেন্টের মাধ্যমে টাকা চুরি
     tactic: Impact
     atlas: AML.T0031
     risk: High
     category: impact
-    description: Attacker uses agent to perform unauthorized financial transactions
+    # original: description: Attacker uses agent to perform unauthorized financial transactions
+    description: হ্যাকার এজেন্টকে দিয়ে আপনার অজান্তে টাকার লেনদেন করিয়ে নেয়
     attackVector: Prompt injection causes agent to interact with financial APIs or services
     affected: Financial integrations, payment tools
     mitigations: Tool-specific policies
@@ -594,7 +676,8 @@ trust_boundaries:
   # Order follows actual user/data flow:
   # Supply chain (pre-install) → Channel access (message in) → Session (routing) → Execution + External content (adjacent)
   - id: 1
-    name: Supply Chain
+    # original: name: Supply Chain
+    name: সাপ্লাই চেইন (জোগান ব্যবস্থা)
     zone: ClawHub
     phase: pre-install
     controls:
@@ -604,7 +687,8 @@ trust_boundaries:
       - GitHub account age verification
 
   - id: 2
-    name: Channel Access Control
+    # original: name: Channel Access Control
+    name: চ্যানেল অ্যাক্সেস কন্ট্রোল
     zone: Gateway
     phase: message-flow
     controls:
@@ -613,7 +697,8 @@ trust_boundaries:
       - Token/Password/Tailscale auth
 
   - id: 3
-    name: Session Isolation
+    # original: name: Session Isolation
+    name: সেশন আলাদা রাখা
     zone: Agent Sessions
     phase: message-flow
     controls:
@@ -622,7 +707,8 @@ trust_boundaries:
       - Transcript logging
 
   - id: 4
-    name: Tool Execution
+    # original: name: Tool Execution
+    name: টুল চালানো
     zone: Execution Sandbox
     phase: execution
     adjacent: 5
@@ -632,7 +718,8 @@ trust_boundaries:
       - SSRF protection (DNS pinning + IP blocking)
 
   - id: 5
-    name: External Content
+    # original: name: External Content
+    name: বাইরের মালমসলা (External Content)
     zone: Fetched URLs / Emails / Webhooks
     phase: execution
     adjacent: 4
