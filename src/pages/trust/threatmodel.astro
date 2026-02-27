@@ -706,8 +706,10 @@ for (const b of trustBoundaries) {
   </nav>
 
   <main class="tm-container">
-    <h1 class="article-title">Threat Model</h1>
-    <p class="subtitle">MITRE ATLAS Framework for AI Agent Security</p>
+    <!-- original: <h1 class="article-title">Threat Model</h1> -->
+    <h1 class="article-title">থ্রেট মডেল (বাঁশ খাওয়ার নকশা)</h1>
+    <!-- original: <p class="subtitle">MITRE ATLAS Framework for AI Agent Security</p> -->
+    <p class="subtitle">এআই এজেন্টের সিকিউরিটির জন্য মাইটার অ্যাটলাস (MITRE ATLAS) ফ্রেমওয়ার্ক</p>
     <div class="header-badges">
       <span class="header-badge badge-version">v1.0-draft</span>
       <span class="header-badge badge-atlas">MITRE ATLAS 2025</span>
@@ -716,11 +718,16 @@ for (const b of trustBoundaries) {
     {data ? (
       <>
         <div class="stats-grid">
-          <div class="stat-card"><div class="stat-value">{threats.length}</div><div class="stat-label">Total Threats</div></div>
-          <div class="stat-card"><div class="stat-value critical">{criticalCount}</div><div class="stat-label">Critical Risk</div></div>
-          <div class="stat-card"><div class="stat-value high">{highCount}</div><div class="stat-label">High Risk</div></div>
-          <div class="stat-card"><div class="stat-value medium">{mediumCount}</div><div class="stat-label">Medium Risk</div></div>
-          <div class="stat-card"><div class="stat-value low">{lowCount}</div><div class="stat-label">Low Risk</div></div>
+          <!-- original: <div class="stat-card"><div class="stat-value">{threats.length}</div><div class="stat-label">Total Threats</div></div> -->
+          <div class="stat-card"><div class="stat-value">{threats.length}</div><div class="stat-label">মোট ফাপড়</div></div>
+          <!-- original: <div class="stat-card"><div class="stat-value critical">{criticalCount}</div><div class="stat-label">Critical Risk</div></div> -->
+          <div class="stat-card"><div class="stat-value critical">{criticalCount}</div><div class="stat-label">মারাত্মক রিস্ক</div></div>
+          <!-- original: <div class="stat-card"><div class="stat-value high">{highCount}</div><div class="stat-label">High Risk</div></div> -->
+          <div class="stat-card"><div class="stat-value high">{highCount}</div><div class="stat-label">বড় রিস্ক</div></div>
+          <!-- original: <div class="stat-card"><div class="stat-value medium">{mediumCount}</div><div class="stat-label">Medium Risk</div></div> -->
+          <div class="stat-card"><div class="stat-value medium">{mediumCount}</div><div class="stat-label">মাঝারি রিস্ক</div></div>
+          <!-- original: <div class="stat-card"><div class="stat-value low">{lowCount}</div><div class="stat-label">Low Risk</div></div> -->
+          <div class="stat-card"><div class="stat-value low">{lowCount}</div><div class="stat-label">ছোট রিস্ক</div></div>
         </div>
 
         <div class="risk-legend">
@@ -731,7 +738,8 @@ for (const b of trustBoundaries) {
         </div>
 
         <section class="matrix-section">
-          <h2 class="section-title">Threat Matrix by ATLAS Tactic</h2>
+          <!-- original: <h2 class="section-title">Threat Matrix by ATLAS Tactic</h2> -->
+          <h2 class="section-title">অ্যাটলাস অনুযায়ী থ্রেট ম্যাট্রিক্স</h2>
           <div class="matrix-container">
             <div class="matrix">
               {tactics.map(tactic => {
@@ -762,7 +770,8 @@ for (const b of trustBoundaries) {
         </section>
 
         <section class="chains-section">
-          <h2 class="section-title">Critical Attack Chains</h2>
+          <!-- original: <h2 class="section-title">Critical Attack Chains</h2> -->
+          <h2 class="section-title">মারাত্মক অ্যাটাক চেইন</h2>
           <div class="chains-grid">
             {attackChains.map(chain => (
               <div class="chain-card">
@@ -779,7 +788,8 @@ for (const b of trustBoundaries) {
         </section>
 
         <section class="boundaries-section">
-          <h2 class="section-title">Trust Boundaries</h2>
+          <!-- original: <h2 class="section-title">Trust Boundaries</h2> -->
+          <h2 class="section-title">ট্রাস্ট বাউন্ডারি (বিশ্বাসের সীমানা)</h2>
           <div class="boundaries-flow">
             {boundaryItems.map((item, i) => (
               <>
@@ -822,15 +832,18 @@ for (const b of trustBoundaries) {
 
         <footer class="tm-footer">
           <div class="footer-atlas">
-            <p>Built on <a href="https://atlas.mitre.org/" target="_blank">MITRE ATLAS</a> (Adversarial Threat Landscape for AI Systems)</p>
-            <p class="footer-atlas-sub">ATLAS is maintained by <a href="https://www.mitre.org/" target="_blank">MITRE</a> in collaboration with the AI security community</p>
+            <!-- original: <p>Built on <a href="https://atlas.mitre.org/" target="_blank">MITRE ATLAS</a> (Adversarial Threat Landscape for AI Systems)</p> -->
+            <p><a href="https://atlas.mitre.org/" target="_blank">MITRE ATLAS</a> এর ওপর ভিত্তি করে বানানো (এআই এর বাঁশের লিস্ট)</p>
+            <!-- original: <p class="footer-atlas-sub">ATLAS is maintained by <a href="https://www.mitre.org/" target="_blank">MITRE</a> in collaboration with the AI security community</p> -->
+            <p class="footer-atlas-sub">অ্যাটলাস চালায় <a href="https://www.mitre.org/" target="_blank">MITRE</a>, সাথে এআই সিকিউরিটি আতেলরা আছে</p>
           </div>
           <div class="footer-links">
-            <a href="https://atlas.mitre.org/techniques/" target="_blank">ATLAS Techniques</a><span class="footer-sep">|</span>
-            <a href="https://atlas.mitre.org/tactics/" target="_blank">ATLAS Tactics</a><span class="footer-sep">|</span>
-            <a href="https://github.com/openclaw/trust" target="_blank">Contribute</a>
+            <a href="https://atlas.mitre.org/techniques/" target="_blank">অ্যাটলাস টেকনিক</a><span class="footer-sep">|</span>
+            <a href="https://atlas.mitre.org/tactics/" target="_blank">অ্যাটলাস ট্যাকটিকস</a><span class="footer-sep">|</span>
+            <a href="https://github.com/openclaw/trust" target="_blank">অবদান রাখুন</a>
           </div>
-          <div class="footer-contact"><p>Report security issues to <a href="mailto:security@openclaw.ai">security@openclaw.ai</a></p></div>
+          <!-- original: <div class="footer-contact"><p>Report security issues to <a href="mailto:security@openclaw.ai">security@openclaw.ai</a></p></div> -->
+          <div class="footer-contact"><p>কোনো ঘাপলা পেলে মেইল করুন <a href="mailto:security@openclaw.ai">security@openclaw.ai</a></p></div>
           <p class="footer-version">OpenClaw Threat Model v1.0-draft</p>
         </footer>
       </>

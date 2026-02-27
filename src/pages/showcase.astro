@@ -6,14 +6,22 @@ import showcaseData from '../data/showcase.json';
 const sortedShowcase = showcaseData;
 
 const categoryLabels: Record<string, string> = {
-  'power-user': '🚀 Power User',
-  'automation': '⚡ Automation',
-  'productivity': '📋 Productivity',
-  'integration': '🔗 Integration',
-  'developer': '💻 Developer',
-  'personal': '👤 Personal',
-  'family': '👨‍👩‍👧 Family',
-  'smart-home': '🏠 Smart Home',
+  // original: 'power-user': '🚀 Power User',
+  'power-user': '🚀 সুপার আঁতেল (Power User)',
+  // original: 'automation': '⚡ Automation',
+  'automation': '⚡ অলস অটোমেশন',
+  // original: 'productivity': '📋 Productivity',
+  'productivity': '📋 কাজের ভান',
+  // original: 'integration': '🔗 Integration',
+  'integration': '🔗 জোড়াতালি',
+  // original: 'developer': '💻 Developer',
+  'developer': '💻 সারাদিন কোড গুতায়',
+  // original: 'personal': '👤 Personal',
+  'personal': '👤 নিজের ধান্দা',
+  // original: 'family': '👨‍👩‍👧 Family',
+  'family': '👨‍👩‍👧 ফ্যামিলির প্যারা',
+  // original: 'smart-home': '🏠 Smart Home',
+  'smart-home': '🏠 বোকা ঘর',
 };
 ---
 
@@ -23,11 +31,14 @@ const categoryLabels: Record<string, string> = {
 
   <main class="container">
     <header class="header">
-      <a href="/" class="back-link">← Back to home</a>
+      <!-- original: <a href="/" class="back-link">← Back to home</a> -->
+      <a href="/" class="back-link">← বাড়ি ফিরে যান</a>
       <h1 class="title">
-        <span class="claw-accent">⟩</span> What People Are Building
+        <!-- original: <span class="claw-accent">⟩</span> What People Are Building -->
+        <span class="claw-accent">⟩</span> পাবলিক কীসব আজাইরা জিনিস বানাচ্ছে দেখেন
       </h1>
-      <p class="subtitle">Real projects, real automation, real magic.</p>
+      <!-- original: <p class="subtitle">Real projects, real automation, real magic.</p> -->
+      <p class="subtitle">আসল প্রোজেক্ট, ফালতু অটোমেশন, জাদু মানেই ধোঁকাবাজি।</p>
     </header>
 
     <div class="showcase-grid">
@@ -54,38 +65,51 @@ const categoryLabels: Record<string, string> = {
               ))}
             </div>
           )}
-          <span class="view-link">View on X →</span>
+          <!-- original: <span class="view-link">View on X →</span> -->
+          <span class="view-link">এক্সে (Twitter) গিয়ে দেখেন →</span>
         </a>
       ))}
     </div>
 
     <section class="cta-section">
-      <h2 class="cta-title">Built something cool?</h2>
-      <p class="cta-desc">Share your OpenClaw creation with the community</p>
+      <!-- original: <h2 class="cta-title">Built something cool?</h2> -->
+      <h2 class="cta-title">ভাব মারার মতো কিছু বানাইছেন?</h2>
+      <!-- original: <p class="cta-desc">Share your OpenClaw creation with the community</p> -->
+      <p class="cta-desc">আপনার এই ফালতু সৃষ্টিটা সবাইকে দেখিয়ে একটু ভাব নেন</p>
       <div class="cta-buttons">
-        <a href="https://twitter.com/intent/tweet?text=Check%20out%20what%20I%20built%20with%20%40openclaw%21" target="_blank" rel="noopener" class="cta-btn cta-primary">Share on X</a>
-        <a href="https://clawhub.ai" target="_blank" rel="noopener" class="cta-btn cta-hub">Browse Skills</a>
-        <a href="https://discord.com/invite/clawd" target="_blank" rel="noopener" class="cta-btn cta-secondary">Join Discord</a>
+        <!-- original: <a href="https://twitter.com/intent/tweet?text=Check%20out%20what%20I%20built%20with%20%40openclaw%21" target="_blank" rel="noopener" class="cta-btn cta-primary">Share on X</a> -->
+        <a href="https://twitter.com/intent/tweet?text=Check%20out%20what%20I%20built%20with%20%40openclaw%21" target="_blank" rel="noopener" class="cta-btn cta-primary">এক্সে (X) ভাব নেন</a>
+        <!-- original: <a href="https://clawhub.ai" target="_blank" rel="noopener" class="cta-btn cta-hub">Browse Skills</a> -->
+        <a href="https://clawhub.ai" target="_blank" rel="noopener" class="cta-btn cta-hub">অন্যের স্কিল চুরি করেন</a>
+        <!-- original: <a href="https://discord.com/invite/clawd" target="_blank" rel="noopener" class="cta-btn cta-secondary">Join Discord</a> -->
+        <a href="https://discord.com/invite/clawd" target="_blank" rel="noopener" class="cta-btn cta-secondary">ডিসকর্ডে এসে চিলান</a>
       </div>
     </section>
 
     <p class="more-examples">
-      Looking for more? Check out <a href="https://docs.openclaw.ai/start/showcase" target="_blank" rel="noopener">even more examples in our docs</a> →
+      <!-- original: Looking for more? Check out <a href="https://docs.openclaw.ai/start/showcase" target="_blank" rel="noopener">even more examples in our docs</a> → -->
+      আরো খুঁজতাছেন? আমাদের <a href="https://docs.openclaw.ai/start/showcase" target="_blank" rel="noopener">ডকসে গিয়ে আরও ফালতু উদাহরণ দেখেন</a> →
     </p>
 
     <footer class="footer">
       <nav class="footer-nav">
-        <a href="/">Home</a>
+        <!-- original: <a href="/">Home</a> -->
+        <a href="/">বাড়ি (Home)</a>
         <span class="footer-separator">·</span>
-        <a href="/blog">Blog</a>
+        <!-- original: <a href="/blog">Blog</a> -->
+        <a href="/blog">ব্লগ</a>
         <span class="footer-separator">·</span>
-        <a href="/shoutouts">Shoutouts</a>
+        <!-- original: <a href="/shoutouts">Shoutouts</a> -->
+        <a href="/shoutouts">পাবলিকের চিল্লাপাল্লা</a>
         <span class="footer-separator">·</span>
-        <a href="/integrations">Integrations</a>
+        <!-- original: <a href="/integrations">Integrations</a> -->
+        <a href="/integrations">ইন্টিগ্রেশনসমূহ</a>
         <span class="footer-separator">·</span>
-        <a href="https://trust.openclaw.ai/">Trust</a>
+        <!-- original: <a href="https://trust.openclaw.ai/">Trust</a> -->
+        <a href="https://trust.openclaw.ai/">বিশ্বাস (Trust)</a>
       </nav>
-      <p>Built by <a href="https://molty.me" target="_blank" rel="noopener">Molty</a> 🦞</p>
+      <!-- original: <p>Built by <a href="https://molty.me" target="_blank" rel="noopener">Molty</a> 🦞</p> -->
+      <p>বানাইছে <a href="https://molty.me" target="_blank" rel="noopener">Molty</a> 🦞 (একটা মহাকাশের চিংড়ি)</p>
     </footer>
   </main>
 </Layout>

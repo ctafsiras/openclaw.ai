@@ -83,14 +83,16 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
       </div>
 
       <h1 class="title">
-        <span class="title-main">OpenClaw</span>
+        <span class="title-main">ওপেনক্ল (OpenClaw)</span>
       </h1>
 
-      <p class="tagline" id="tagline">The AI that actually does things.</p>
+      <!-- original: <p class="tagline" id="tagline">The AI that actually does things.</p> -->
+      <p class="tagline" id="tagline">এমন এক এআই যেটা আসলেই কাজের কাজ করে (বাকিগুলোর মতো শুধু বকচর করে না)।</p>
 
+      <!-- original: <p class="description">Clears your inbox, sends emails, manages your calendar, checks you in for flights.<br/>All from WhatsApp, Telegram, or any chat app you already use.</p> -->
       <p class="description">
-        Clears your inbox, sends emails, manages your calendar, checks you in for flights.<br/>
-        All from WhatsApp, Telegram, or any chat app you already use.
+        আপনার জঞ্জাল ইনবক্স সাফ করে, ইমেইল পাঠায়, ক্যালেন্ডার সামলায়, এমনকি ফ্লাইটের চেক-ইনও করে দেয়।<br/>
+        সবই হবে আপনার হোয়াটসঅ্যাপ, টেলিগ্রাম বা যেকোনো চ্যাট অ্যাপ থেকে (যেগুলোতে আপনি সারাদিন পড়ে থাকেন)।
       </p>
     </header>
 
@@ -109,9 +111,11 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
     <section class="testimonials">
       <div class="section-header">
         <h2 class="section-title">
-          <span class="claw-accent">⟩</span> What People Say
+          <!-- original: <span class="claw-accent">⟩</span> What People Say -->
+          <span class="claw-accent">⟩</span> মানুষজন যা বলে (বা চাপাবাজি করে)
         </h2>
-        <a href="/shoutouts" class="section-link">View all <span class="sr-only">community shoutouts</span>
+        <!-- original: <a href="/shoutouts" class="section-link">View all <span class="sr-only">community shoutouts</span> -->
+        <a href="/shoutouts" class="section-link">সবগুলোর বকবকানি দেখুন <span class="sr-only">community shoutouts</span>
           <span aria-hidden="true">→</span>
         </a>
       </div>
@@ -156,7 +160,8 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
     <!-- Quick Start -->
     <section class="quickstart">
       <h2 class="section-title">
-        <span class="claw-accent">⟩</span> Quick Start
+        <!-- original: <span class="claw-accent">⟩</span> Quick Start -->
+        <span class="claw-accent">⟩</span> জলদি শুরু করেন (এত পড়ার সময় নাই)
       </h2>
       <div class="code-block">
         <div class="code-header">
@@ -164,9 +169,11 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
           <span class="code-dot"></span>
           <span class="code-dot"></span>
           <div class="mode-switch">
-            <button class="mode-btn active" data-mode="oneliner">One-liner</button>
+            <!-- original: <button class="mode-btn active" data-mode="oneliner">One-liner</button> -->
+            <button class="mode-btn active" data-mode="oneliner">এক লাইনের খেল</button>
             <button class="mode-btn" data-mode="quick">npm</button>
-            <button class="mode-btn" data-mode="hackable">Hackable</button>
+            <!-- original: <button class="mode-btn" data-mode="hackable">Hackable</button> -->
+            <button class="mode-btn" data-mode="hackable">গুতোগুতির জন্য</button>
             <button class="mode-btn" data-mode="macos">macOS</button>
           </div>
           <div class="pm-switch" id="pm-switch" style="display: none;">
@@ -192,13 +199,15 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
           <div class="beta-switch" id="beta-switch">
             <button class="beta-btn" id="beta-btn" data-beta="false">
               <span class="beta-label">β</span>
-              <span class="beta-text">Beta</span>
+              <!-- original: <span class="beta-text">Beta</span> -->
+              <span class="beta-text">Beta (ফাটতে পারে)</span>
             </button>
           </div>
           <div class="switch-placeholder" id="switch-placeholder" aria-hidden="true"></div>
         </div>
         <div id="code-oneliner" class="code-content">
-          <div class="code-line comment" id="oneliner-comment"># Works everywhere. On macOS, first run may need an Administrator for Homebrew.</div>
+          <!-- original: <div class="code-line comment" id="oneliner-comment"># Works everywhere. On macOS, first run may need an Administrator for Homebrew.</div> -->
+          <div class="code-line comment" id="oneliner-comment"># সব জায়গায় চলে। ম্যাকে প্রথমবার হোমব্রুর (Homebrew) জন্য হয়তো পাসওয়ার্ড চাইতে পারে, ঘাবড়াবেন না।</div>
           <div class="code-line cmd">
             <span class="code-prompt">$</span>
             <span class="os-cmd">curl -fsSL https://openclaw.ai/install.sh | bash</span>
@@ -209,7 +218,8 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
           </div>
         </div>
         <div id="code-quick" class="code-content" style="display: none;">
-          <div class="code-line comment" id="quick-comment-install"># Install OpenClaw</div>
+          <!-- original: <div class="code-line comment" id="quick-comment-install"># Install OpenClaw</div> -->
+          <div class="code-line comment" id="quick-comment-install"># ওপেনক্ল ইনস্টল মারেন</div>
           <div class="code-line cmd">
             <span class="code-prompt">$</span>
             <span class="pm-install">npm i -g openclaw</span>
@@ -218,7 +228,8 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
               <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><polyline points="20 6 9 17 4 12"/></svg>
             </button>
           </div>
-          <div class="code-line comment" id="quick-comment-onboard"># Meet your lobster</div>
+          <!-- original: <div class="code-line comment" id="quick-comment-onboard"># Meet your lobster</div> -->
+          <div class="code-line comment" id="quick-comment-onboard"># আপনার নতুন চিংড়ির সাথে পরিচিত হোন</div>
           <div class="code-line cmd">
             <span class="code-prompt">$</span>
             <span>openclaw onboard</span>
@@ -258,7 +269,8 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
                 <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><polyline points="20 6 9 17 4 12"/></svg>
               </button>
             </div>
-            <div class="code-line comment"># You built it, now meet it</div>
+            <!-- original: <div class="code-line comment"># You built it, now meet it</div> -->
+            <div class="code-line comment"># অনেক তো বিল্ড করলেন, এবার চিংড়িটার চেহারা দেখেন</div>
             <div class="code-line cmd">
               <span class="code-prompt">$</span>
               <span>pnpm run openclaw onboard</span>
@@ -272,8 +284,10 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
         <div id="code-macos" class="code-content" style="display: none;">
           <div class="macos-app-content">
             <div class="macos-description">
-              <span class="macos-tagline">Companion App (Beta)</span>
-              <span class="macos-subtitle">Menubar access to your lobster. Works great alongside the CLI.</span>
+              <!-- original: <span class="macos-tagline">Companion App (Beta)</span> -->
+              <span class="macos-tagline">সাথী অ্যাপ (Beta)</span>
+              <!-- original: <span class="macos-subtitle">Menubar access to your lobster. Works great alongside the CLI.</span> -->
+              <span class="macos-subtitle">মেনুবারে আপনার পোষা চিংড়ি। CLI-এর সাথে সেই লেভেলের ভাব।</span>
             </div>
             <a href="https://github.com/openclaw/openclaw/releases/latest" class="macos-download-btn" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -281,14 +295,17 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
                 <polyline points="7 10 12 15 17 10"/>
                 <line x1="12" y1="15" x2="12" y2="3"/>
               </svg>
-              Download for macOS
+              <!-- original: Download for macOS -->
+              ম্যাকওএস (macOS) এর জন্য নামান
             </a>
-            <span class="macos-meta">Requires macOS 14+ · Universal Binary</span>
+            <!-- original: <span class="macos-meta">Requires macOS 14+ · Universal Binary</span> -->
+            <span class="macos-meta">macOS 14+ লাগবে · ইউনির্ভাসাল বাইনারি (মানে গরিবের চলবে না)</span>
           </div>
         </div>
       </div>
+      <!-- original: <p class="quickstart-note">Works on macOS, Windows & Linux. The one-liner installs Node.js and everything else for you.</p> -->
       <p class="quickstart-note">
-        Works on macOS, Windows & Linux. The one-liner installs Node.js and everything else for you.
+        ম্যাক, উইন্ডোজ আর লিনাক্স তিনটেতেই চলে। এক লাইনের কমান্ডটাই আপনার জন্য নোড.জেএস (Node.js) থেকে শুরু করে হাঁড়ি-পাতিল সব ইনস্টল করে দেবে। আপনার কষ্ট করার দরকার নাই।
       </p>
     </section>
 
@@ -351,16 +368,22 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
 
       const comments = {
         oneliner: {
-          stable: "# Works everywhere. Installs everything. You're welcome. 🦞",
-          beta: "# Living on the edge. Bugs are features you found first. 🦞"
+          // original: stable: "# Works everywhere. Installs everything. You're welcome. 🦞",
+          stable: "# সব জায়গায় চলে। দুনিয়ার সব ইনস্টল করে দেয়। থ্যাংকস দেয়া লাগবে না। 🦞",
+          // original: beta: "# Living on the edge. Bugs are features you found first. 🦞"
+          beta: "# খাদের কিনারায় জীবন। বাগগুলো আসলে ফিচার, আর আপনি গিনিপিগ। 🦞"
         },
         quickInstall: {
-          stable: "# Install OpenClaw",
-          beta: "# Install OpenClaw (beta) — Fresh from the lab 🧪"
+          // original: stable: "# Install OpenClaw",
+          stable: "# ওপেনক্ল ইনস্টল ফালান",
+          // original: beta: "# Install OpenClaw (beta) — Fresh from the lab 🧪"
+          beta: "# ওপেনক্ল ইনস্টল ফালান (beta) — ল্যাব থেকে আনা গরম গরম মাল 🧪"
         },
         quickOnboard: {
-          stable: "# Meet your lobster",
-          beta: "# Meet your experimental lobster"
+          // original: stable: "# Meet your lobster",
+          stable: "# চিংড়ির সাথে পরিচিত হোন",
+          // original: beta: "# Meet your experimental lobster"
+          beta: "# এক্সপেরিমেন্টাল চিংড়ির সাথে আলাপ জমান"
         }
       };
 
@@ -620,38 +643,51 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
     <!-- What It Does -->
     <section class="features">
       <h2 class="section-title">
-        <span class="claw-accent">⟩</span> What It Does
+        <!-- original: <span class="claw-accent">⟩</span> What It Does -->
+        <span class="claw-accent">⟩</span> ছাইপাশ যা পারে
       </h2>
       <div class="features-grid">
         <a href="https://docs.openclaw.ai/getting-started" target="_blank" rel="noopener" class="feature-card">
           <div class="feature-icon"><Icon icon="lucide:home" color="var(--coral-bright)" size={28} /></div>
-          <h3 class="feature-title">Runs on Your Machine</h3>
-          <p class="feature-desc">Mac, Windows, or Linux. Anthropic, OpenAI, or local models. Private by default—your data stays yours.</p>
+          <!-- original: <h3 class="feature-title">Runs on Your Machine</h3> -->
+          <h3 class="feature-title">আপনার নিজের মেশিনে খাটবে</h3>
+          <!-- original: <p class="feature-desc">Mac, Windows, or Linux. Anthropic, OpenAI, or local models. Private by default—your data stays yours.</p> -->
+          <p class="feature-desc">ম্যাক, উইন্ডোজ, লিনাক্স—সবখানে। আপনার ডেটা কেউ চুরি করবে না, আপনার কাছেই পড়ে পচবে।</p>
         </a>
         <a href="/integrations" class="feature-card">
           <div class="feature-icon"><Icon icon="lucide:message-circle" color="var(--coral-bright)" size={28} /></div>
-          <h3 class="feature-title">Any Chat App</h3>
-          <p class="feature-desc">Talk to it on WhatsApp, Telegram, Discord, Slack, Signal, or iMessage. Works in DMs and group chats.</p>
+          <!-- original: <h3 class="feature-title">Any Chat App</h3> -->
+          <h3 class="feature-title">যেকোনো চ্যাট অ্যাপে চলে</h3>
+          <!-- original: <p class="feature-desc">Talk to it on WhatsApp, Telegram, Discord, Slack, Signal, or iMessage. Works in DMs and group chats.</p> -->
+          <p class="feature-desc">হোয়াটসঅ্যাপ, টেলিগ্রাম, ম্যাসেঞ্জার—যেখানে খুশি ঘ্যানঘ্যান করেন, ও শুনবে।</p>
         </a>
         <a href="https://docs.openclaw.ai/session" target="_blank" rel="noopener" class="feature-card">
           <div class="feature-icon"><Icon icon="lucide:brain" color="var(--coral-bright)" size={28} /></div>
-          <h3 class="feature-title">Persistent Memory</h3>
-          <p class="feature-desc">Remembers you and becomes uniquely yours. Your preferences, your context, your AI.</p>
+          <!-- original: <h3 class="feature-title">Persistent Memory</h3> -->
+          <h3 class="feature-title">সব মনে রাখে (আপনার এক্সের মতই)</h3>
+          <!-- original: <p class="feature-desc">Remembers you and becomes uniquely yours. Your preferences, your context, your AI.</p> -->
+          <p class="feature-desc">আপনার সব খাইসলত মনে রাখবে। কোথায় কি বলেন না বলেন, সব ওর মেমোরিতে গ্যাঁথে আছে।</p>
         </a>
         <a href="https://docs.openclaw.ai/browser" target="_blank" rel="noopener" class="feature-card">
           <div class="feature-icon"><Icon icon="lucide:globe" color="var(--coral-bright)" size={28} /></div>
-          <h3 class="feature-title">Browser Control</h3>
-          <p class="feature-desc">It can browse the web, fill forms, and extract data from any site.</p>
+          <!-- original: <h3 class="feature-title">Browser Control</h3> -->
+          <h3 class="feature-title">ব্রাউজারে মাতবরি</h3>
+          <!-- original: <p class="feature-desc">It can browse the web, fill forms, and extract data from any site.</p> -->
+          <p class="feature-desc">ও একা একা ওয়েবসাইট ঘাঁটতে পারে, বিরক্তিকর ফর্ম ফিলাপ করতে পারে, আবার অন্যের ডেটাও মারে।</p>
         </a>
         <a href="https://docs.openclaw.ai/bash" target="_blank" rel="noopener" class="feature-card">
           <div class="feature-icon"><Icon icon="lucide:terminal" color="var(--coral-bright)" size={28} /></div>
-          <h3 class="feature-title">Full System Access</h3>
-          <p class="feature-desc">Read and write files, run shell commands, execute scripts. Full access or sandboxed—your choice.</p>
+          <!-- original: <h3 class="feature-title">Full System Access</h3> -->
+          <h3 class="feature-title">পুরো সিস্টেমের চাবি ওর হাতে</h3>
+          <!-- original: <p class="feature-desc">Read and write files, run shell commands, execute scripts. Full access or sandboxed—your choice.</p> -->
+          <p class="feature-desc">ফাইল মোছা থেকে শুরু করে কমান্ড চালানো—সব করতে পারে। সিস্টেম নষ্ট করলে আমাদের দোষ নাই।</p>
         </a>
         <a href="https://docs.openclaw.ai/skills" target="_blank" rel="noopener" class="feature-card">
           <div class="feature-icon"><Icon icon="lucide:puzzle" color="var(--coral-bright)" size={28} /></div>
-          <h3 class="feature-title">Skills & Plugins</h3>
-          <p class="feature-desc">Extend with community skills or build your own. It can even write its own.</p>
+          <!-- original: <h3 class="feature-title">Skills & Plugins</h3> -->
+          <h3 class="feature-title">আজাইরা প্লাগিন্স</h3>
+          <!-- original: <p class="feature-desc">Extend with community skills or build your own. It can even write its own.</p> -->
+          <p class="feature-desc">কমিউনিটির হাবিজাবি কোড লাগান, বা নিজে লেখেন। ও চাইলে নিজেই নিজের স্কিল বানায় (খাইছে রে)।</p>
         </a>
       </div>
     </section>
@@ -659,7 +695,8 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
     <!-- Integrations Preview -->
     <section class="integrations-preview">
       <h2 class="section-title">
-        <span class="claw-accent">⟩</span> Works With Everything
+        <!-- original: <span class="claw-accent">⟩</span> Works With Everything -->
+        <span class="claw-accent">⟩</span> দুনিয়ার সবকিছুর সাথেই জোড়া লাগে
       </h2>
       <div class="integrations-row">
         {integrationPills.map((p) => (
@@ -670,16 +707,19 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
         ))}
       </div>
       <div class="integrations-links">
-        <a href="/integrations" class="integrations-link">View all 50+ integrations →</a>
+        <!-- original: <a href="/integrations" class="integrations-link">View all 50+ integrations →</a> -->
+        <a href="/integrations" class="integrations-link">৫০টার ওপর হাবিজাবি ইন্টিগ্রেশন দেখেন →</a>
         <span class="link-separator">·</span>
-        <a href="/showcase" class="integrations-link">See what people built →</a>
+        <!-- original: <a href="/showcase" class="integrations-link">See what people built →</a> -->
+        <a href="/showcase" class="integrations-link">মানুষজন এইটা দিয়ে কীসব বানাইছে দেখেন →</a>
       </div>
     </section>
 
     <!-- Press Section -->
     <section class="press-section">
       <h2 class="section-title">
-        <span class="claw-accent">⟩</span> Featured In
+        <!-- original: <span class="claw-accent">⟩</span> Featured In -->
+        <span class="claw-accent">⟩</span> এরা আবার আমাদের গুণগান গায়
       </h2>
       <div class="press-grid">
         <a href="https://www.macstories.net/stories/clawdbot-showed-me-what-the-future-of-personal-ai-assistants-looks-like/" target="_blank" rel="noopener" class="press-card press-featured">
@@ -726,8 +766,10 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
           <line x1="8" y1="7" x2="16" y2="7"/>
           <line x1="8" y1="11" x2="14" y2="11"/>
         </svg>
-        <span class="cta-label">Documentation</span>
-        <span class="cta-sub">Learn the ropes</span>
+        <!-- original: <span class="cta-label">Documentation</span> -->
+        <span class="cta-label">ডকুমেন্টেশন</span>
+        <!-- original: <span class="cta-sub">Learn the ropes</span> -->
+        <span class="cta-sub">পড়ে শিখে নিন (নইলে তো পারবেন না)</span>
       </a>
 
       <a href="https://github.com/openclaw/openclaw" class="cta cta-github" target="_blank" rel="noopener">
@@ -742,8 +784,10 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
         <svg class="cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
         </svg>
-        <span class="cta-label">ClawHub</span>
-        <span class="cta-sub">Download skills</span>
+        <!-- original: <span class="cta-label">ClawHub</span> -->
+        <span class="cta-label">ক্ল-হাব (ClawHub)</span>
+        <!-- original: <span class="cta-sub">Download skills</span> -->
+        <span class="cta-sub">অন্যের স্কিল চুরি করেন</span>
       </a>
     </nav>
 
@@ -751,9 +795,11 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
     <section class="newsletter">
       <div class="newsletter-content">
         <h2 class="newsletter-title">
-          <span class="claw-accent">⟩</span> Stay in the Loop
+          <!-- original: <span class="claw-accent">⟩</span> Stay in the Loop -->
+          <span class="claw-accent">⟩</span> আমাদের জ্বালাতন সহ্য করতে চান?
         </h2>
-        <p class="newsletter-desc">Get updates on new features, integrations, and lobster wisdom. No spam, unsubscribe anytime.</p>
+        <!-- original: <p class="newsletter-desc">Get updates on new features, integrations, and lobster wisdom. No spam, unsubscribe anytime.</p> -->
+        <p class="newsletter-desc">নতুন ফিচারের আপডেট নিন, আর চিংড়ির হাবিজাবি জ্ঞান শুনুন। স্প্যাম করবো না (হয়তো)। ভালো না লাগলে কেটে পড়বেন।</p>
         <form class="newsletter-form" action="https://buttondown.com/api/emails/embed-subscribe/steipete" method="post" target="_blank">
           <input type="hidden" name="tag" value="clawdbot" />
           <input
@@ -765,7 +811,8 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
             aria-label="Email address"
           />
           <button type="submit" class="newsletter-btn">
-            Subscribe
+            <!-- original: Subscribe -->
+            প্যাঁদাবেন না, সাবস্ক্রাইব করেন
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"/>
               <polyline points="12 5 19 12 12 19"/>
@@ -778,7 +825,8 @@ const duration2 = (row2.length / 2 * pixelsPerItem) / pixelsPerSecond;
     <!-- Sponsors -->
     <section class="sponsors">
       <h2 class="section-title">
-        <span class="claw-accent">⟩</span> Sponsors
+        <!-- original: <span class="claw-accent">⟩</span> Sponsors -->
+        <span class="claw-accent">⟩</span> বড়লোকেরা যারা টাকা দেয়
       </h2>
       <div class="sponsors-grid">
         <a href="https://openai.com" target="_blank" rel="noopener" class="sponsor-card">

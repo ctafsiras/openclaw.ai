@@ -503,43 +503,62 @@ const langLinks = {
   <main class="container">
     <article class="article">
       <header class="article-header">
-        <h1 class="article-title">Trust</h1>
+        <!-- original: <h1 class="article-title">Trust</h1> -->
+        <h1 class="article-title">বিশ্বাস (নাকি বাঁশ)</h1>
       </header>
 
       <div class="article-content">
+        <!-- original: <p>Security posture, roadmap, and how we think about agents that can take real-world actions.</p> -->
         <p>
-          Security posture, roadmap, and how we think about agents that can take real-world actions.
+          সিকিউরিটি, রোডম্যাপ, আর যেসব এআই রিয়েল লাইফে ঘাপলা করতে পারে তাদের নিয়ে আমাদের ফালতু চিন্তাভাবনা।
         </p>
 
         <section class="section">
-          <h2>A New Era in Computing Security</h2>
+          <!-- original: <h2>A New Era in Computing Security</h2> -->
+          <h2>কম্পিউটার সিকিউরিটির নতুন যুগ (নতুন প্যারা)</h2>
           <p>For the past 20 years, security models have been built around locking devices and applications down - setting boundaries between inter-process communications, separating internet from local, sandboxing untrusted code. These principles remain important.</p>
           <p>But AI agents represent a fundamental shift.</p>
           <p>Unlike traditional software that does exactly what code tells it to do, AI agents interpret natural language and make decisions about actions. They blur the boundary between user intent and machine execution. They can be manipulated through language itself.</p>
           <p>We understand that with the great utility of a tool like OpenClaw comes great responsibility. Done wrong, an AI agent is a liability. Done right, we can change personal computing for the better.</p>
-          <p><strong>This security program exists to get it right.</strong></p>
+          <!-- original: <p><strong>This security program exists to get it right.</strong></p> -->
+          <p><strong>যাতে কোনো আকাম না হয়, সেজন্যই এই সিকিউরিটি প্রোগ্রামের নাটক।</strong></p>
         </section>
 
         <section class="section">
-          <h2>Context</h2>
-          <p>OpenClaw is an AI agent platform. Unlike chatbots that only generate text, OpenClaw agents can:</p>
+          <!-- original: <h2>Context</h2> -->
+          <h2>কাহিনী কী (Context)</h2>
+          <!-- original: <p>OpenClaw is an AI agent platform. Unlike chatbots that only generate text, OpenClaw agents can:</p> -->
+          <p>ওপেনক্ল হলো এআই এজেন্ট প্ল্যাটফর্ম। চ্যাটবটের মতো সারাদিন শুধু প্যাঁচাল না পেরে, ওপেনক্ল এজেন্ট এই কাজগুলো করতে পারে:</p>
           <ul>
-            <li>Execute shell commands on the host machine</li>
-            <li>Send messages through WhatsApp, Telegram, Discord, Slack, and other channels</li>
-            <li>Read and write files in the workspace</li>
-            <li>Fetch arbitrary URLs from the internet</li>
-            <li>Schedule automated tasks</li>
-            <li>Access connected services and APIs</li>
+            <!-- original: <li>Execute shell commands on the host machine</li> -->
+            <li>আপনার মেশিনে বসে শেল কমান্ড মেরে সব ওলটপালট করা</li>
+            <!-- original: <li>Send messages through WhatsApp, Telegram, Discord, Slack, and other channels</li> -->
+            <li>হোয়াটসঅ্যাপ, টেলিগ্রাম, ডিসকর্ড, স্ল্যাকে আলতু-ফালতু মেসেজ পাঠানো</li>
+            <!-- original: <li>Read and write files in the workspace</li> -->
+            <li>আপনার সব গোপনীয় ফাইল পড়া আর লেখাআঁকি করা</li>
+            <!-- original: <li>Fetch arbitrary URLs from the internet</li> -->
+            <li>ইন্টারনেটের যত হাবিজাবি ওয়েবসাইট থেকে ডেটা আনা</li>
+            <!-- original: <li>Schedule automated tasks</li> -->
+            <li>নিজে নিজেই কাজ করার নামে ঘুমিয়ে থাকা</li>
+            <!-- original: <li>Access connected services and APIs</li> -->
+            <li>সব ধরনের এপিআই (API) আর সার্ভিসে নাক গলানো</li>
           </ul>
-          <p>This capability is what makes OpenClaw useful. It's also what makes security critical.</p>
-          <p>AI agents that can take real-world actions introduce risks that traditional software doesn't have:</p>
+          <!-- original: <p>This capability is what makes OpenClaw useful. It's also what makes security critical.</p> -->
+          <p>এই ক্ষমতার জন্যই ওপেনক্ল কাজের জিনিস। আর এই কারণেই সিকিউরিটির এমন বেহাল দশা।</p>
+          <!-- original: <p>AI agents that can take real-world actions introduce risks that traditional software doesn't have:</p> -->
+          <p>যেসব এআই রিয়েল লাইফে আকাম করতে পারে, তাদের সাধারণ সফটওয়্যারের চেয়ে বেশি প্যারা আছে:</p>
           <ol>
-            <li><strong>Prompt injection</strong> - Malicious users can craft messages that manipulate the AI into performing unintended actions</li>
-            <li><strong>Indirect injection</strong> - Malicious content in fetched URLs, emails, or documents can hijack agent behavior</li>
-            <li><strong>Tool abuse</strong> - Even without injection, misconfigured agents can cause damage through overly permissive settings</li>
-            <li><strong>Identity risks</strong> - Agents can send messages as you, potentially damaging relationships or reputation</li>
+            <!-- original: <li><strong>Prompt injection</strong> - Malicious users can craft messages that manipulate the AI into performing unintended actions</li> -->
+            <li><strong>প্রম্পট ইঞ্জেকশন</strong> - দুষ্ট লোকজন এআইকে বোকা বানিয়ে উল্টাপাল্টা কাজ করাতে পারে (মানুষের মতো)।</li>
+            <!-- original: <li><strong>Indirect injection</strong> - Malicious content in fetched URLs, emails, or documents can hijack agent behavior</li> -->
+            <li><strong>ইনডাইরেক্ট ইঞ্জেকশন</strong> - বাইরের ওয়েবসাইটের হাবিজাবি বা ইমেইল দিয়ে এজেন্টের মাথা খারাপ করা।</li>
+            <!-- original: <li><strong>Tool abuse</strong> - Even without injection, misconfigured agents can cause damage through overly permissive settings</li> -->
+            <li><strong>টুল অ্যাবিউজ</strong> - কোনো ইঞ্জেকশন ছাড়াই, পারমিশন বেশি দিলে এজেন্ট নিজেই সব ধ্বংস করে দিতে পারে।</li>
+            <!-- original: <li><strong>Identity risks</strong> - Agents can send messages as you, potentially damaging relationships or reputation</li> -->
+            <li><strong>আইডেন্টিটি রিস্ক</strong> - এজেন্ট আপনার নামে মেসেজ পাঠিয়ে আপনার মান-সম্মান ডুবিয়ে দিতে পারে।</li>
           </ol>
-          <p>These aren't theoretical. They're documented attack patterns that affect all AI agent systems.</p>
+          <!-- original: <p>These aren't theoretical. They're documented attack patterns that affect all AI agent systems.</p> -->
+          <p>এগুলা কোনো ভাওতাবাজি না। এগুলো আসল অ্যাটাক প্যাটার্ন, যা সব এআই সিস্টেমের বারোটা বাজায়।</p>
         </section>
 
         <section class="section">
@@ -1052,55 +1071,75 @@ ONGOING:
           <h2>FAQ</h2>
 
           <div class="faq-item">
-            <div class="faq-q">"Is OpenClaw safe to use right now?"</div>
+            <!-- original: <div class="faq-q">"Is OpenClaw safe to use right now?"</div> -->
+            <div class="faq-q">"ওপেনক্ল ব্যবহার করা কি এখন নিরাপদ?"</div>
             <div class="faq-a">
-              <p>Yes, with proper configuration. OpenClaw has security controls enabled by default:</p>
+              <!-- original: <p>Yes, with proper configuration. OpenClaw has security controls enabled by default:</p> -->
+              <p>হ্যাঁ, যদি ঠিকঠাক কনফিগার করতে পারেন (যেটা আপনারা পারেন না)। ওপেনক্লতে বাই-ডিফল্ট কিছু সিকিউরিটি দেওয়া আছে:</p>
               <ul>
-                <li><strong>DM Policy</strong>: Defaults to <code>pairing</code> - unknown senders must complete a pairing flow with an expiring code</li>
-                <li><strong>Exec Security</strong>: Defaults to <code>deny</code> with <code>ask: on-miss</code> - dangerous commands require approval</li>
-                <li><strong>AllowFrom</strong>: If not configured, defaults to self-only</li>
-                <li><strong>Gateway Auth</strong>: Required by default</li>
+                <!-- original: <li><strong>DM Policy</strong>: Defaults to <code>pairing</code> - unknown senders must complete a pairing flow with an expiring code</li> -->
+                <li><strong>ডিএম পলিসি</strong>: অচেনা কেউ মেসেজ দিলে তাকে প্যারিং কোড দিয়ে ভেরিফাই করতে হবে (যেন যে কেউ এসে আপনার এজেন্টের মাথা খেতে না পারে)।</li>
+                <!-- original: <li><strong>Exec Security</strong>: Defaults to <code>deny</code> with <code>ask: on-miss</code> - dangerous commands require approval</li> -->
+                <li><strong>কম্যান্ড সিকিউরিটি</strong>: কোনো হার্ডকোর কমান্ড মারলে আগে আপনার পারমিশন লাগবে (ডিফল্ট: <code>deny</code>)।</li>
+                <!-- original: <li><strong>AllowFrom</strong>: If not configured, defaults to self-only</li> -->
+                <li><strong>কার পারমিশন আছে</strong>: কনফিগার না করলে শুধু আপনিই ইউজ করতে পারবেন।</li>
+                <!-- original: <li><strong>Gateway Auth</strong>: Required by default</li> -->
+                <li><strong>গেটওয়ে অথ</strong>: এটা ডিফল্টভাবেই লাগে (পাসওয়ার্ড ছাড়া ঢোকার ধান্দা বাদ দেন)।</li>
               </ul>
-              <p>Run <code>openclaw security audit --deep</code> to verify your setup. See <a href="https://docs.openclaw.ai/gateway/security">docs.openclaw.ai/gateway/security</a></p>
+              <!-- original: <p>Run <code>openclaw security audit --deep</code> to verify your setup. See <a href="https://docs.openclaw.ai/gateway/security">docs.openclaw.ai/gateway/security</a></p> -->
+              <p><code>openclaw security audit --deep</code> চালিয়ে দেখেন সব ঠিক আছে কিনা। বিস্তারিত পড়ুন: <a href="https://docs.openclaw.ai/gateway/security">docs.openclaw.ai/gateway/security</a></p>
             </div>
           </div>
 
           <div class="faq-item">
-            <div class="faq-q">"Why develop the threat model openly?"</div>
+            <!-- original: <div class="faq-q">"Why develop the threat model openly?"</div> -->
+            <div class="faq-q">"থ্রেট মডেল ওপেনলি বানাচ্ছেন কেন?"</div>
             <div class="faq-a">
-              <p>These attack techniques are already public knowledge - documented in papers, blogs, and talks. Developing openly benefits from collective expertise, builds trust through transparency, and holds us accountable.</p>
+              <!-- original: <p>These attack techniques are already public knowledge - documented in papers, blogs, and talks. Developing openly benefits from collective expertise, builds trust through transparency, and holds us accountable.</p> -->
+              <p>কারণ এই অ্যাটাকগুলো অলরেডি সবাই জানে। লুকিয়ে রেখে লাভ নেই। ওপেনলি করলে পাবলিকের বুদ্ধি কাজে লাগে আর আমাদেরও জবাবদিহি করতে হয়।</p>
             </div>
           </div>
 
           <div class="faq-item">
-            <div class="faq-q">"Why require remediation advice in vulnerability reports?"</div>
+            <!-- original: <div class="faq-q">"Why require remediation advice in vulnerability reports?"</div> -->
+            <div class="faq-q">"বাগ রিপোর্ট করার সময় সমাধানও দিতে হবে কেন?"</div>
             <div class="faq-a">
-              <p>We receive reports from automated scanners and AI tools that flag theoretical issues without understanding them. By requiring reporters to propose a fix, we filter out scanner noise, get actionable reports from researchers who understand the issues, and speed up remediation with expert input.</p>
+              <!-- original: <p>We receive reports from automated scanners and AI tools that flag theoretical issues without understanding them. By requiring reporters to propose a fix, we filter out scanner noise, get actionable reports from researchers who understand the issues, and speed up remediation with expert input.</p> -->
+              <p>আমরা অটোমেটেড স্ক্যানার আর এআই থেকে ফালতু সব রিপোর্ট পাই। সমাধানসহ রিপোর্ট চাইলে আমরা বুঝি কে আসল মানুষ আর কে বট। এতে আমাদের কাজও কমে।</p>
             </div>
           </div>
 
           <div class="faq-item">
-            <div class="faq-q">"What about ClawHub?"</div>
+            <!-- original: <div class="faq-q">"What about ClawHub?"</div> -->
+            <div class="faq-q">"ক্লহাব (ClawHub) এর কী খবর?"</div>
             <div class="faq-a">
-              <p>ClawHub (clawhub.ai) is in scope for the entire security program - threat model, code review, and ongoing monitoring. Skills are code that runs in your agent's context - supply chain security is critical.</p>
+              <!-- original: <p>ClawHub (clawhub.ai) is in scope for the entire security program - threat model, code review, and ongoing monitoring. Skills are code that runs in your agent's context - supply chain security is critical.</p> -->
+              <p>ক্লহাবও এই সিকিউরিটি প্রোগ্রামের মধ্যে পড়ে। স্কিলগুলোও আপনার এজেন্টে রান হয়, তাই এগুলোও চেক করা জরুরি (না হলে অন্য কেউ আপনার ড্যাশবোর্ডে বাঁশ দেবে)।</p>
             </div>
           </div>
 
           <div class="faq-item">
-            <div class="faq-q">"What about mobile apps and desktop?"</div>
+            <!-- original: <div class="faq-q">"What about mobile apps and desktop?"</div> -->
+            <div class="faq-q">"মোবাইল আর ডেস্কটপ অ্যাপের কী হবে?"</div>
             <div class="faq-a">
-              <p>All applications are in scope. The iOS app, Android app, and macOS desktop app will all be covered by the code review and included in the threat model. Nothing is out of scope.</p>
+              <!-- original: <p>All applications are in scope. The iOS app, Android app, and macOS desktop app will all be covered by the code review and included in the threat model. Nothing is out of scope.</p> -->
+              <p>সব অ্যাপই এর আওতায় পড়বে। আইওএস, অ্যান্ড্রয়েড আর ম্যাকওএস—সবগুলোই কোড রিভিউর আন্ডারে থাকবে। বাঁচার কোনো উপায় নেই।</p>
             </div>
           </div>
 
           <div class="faq-item">
-            <div class="faq-q">"Can I help?"</div>
+            <!-- original: <div class="faq-q">"Can I help?"</div> -->
+            <div class="faq-q">"আমি কি কোনো সাহায্য করতে পারি?"</div>
             <div class="faq-a">
               <ul>
-                <li>Contribute to the threat model via pull request</li>
-                <li>Review and comment on security-labeled issues</li>
-                <li>Report vulnerabilities to the relevant repo (or security@openclaw.ai if unsure)</li>
-                <li>Help improve security documentation</li>
+                <!-- original: <li>Contribute to the threat model via pull request</li> -->
+                <li>পুল রিকোয়েস্ট (PR) মেরে থ্রেট মডেলে অবদান রাখতে পারেন।</li>
+                <!-- original: <li>Review and comment on security-labeled issues</li> -->
+                <li>সিকিউরিটি ইস্যুগুলোতে কমেন্ট করে ভাব নিতে পারেন।</li>
+                <!-- original: <li>Report vulnerabilities to the relevant repo (or security@openclaw.ai if unsure)</li> -->
+                <li>কোনো বাগ পেলে গিটহাবে বা security@openclaw.ai তে মেইল করতে পারেন।</li>
+                <!-- original: <li>Help improve security documentation</li> -->
+                <li>আমাদের আবজাব ডকস ঠিক করতে সাহায্য করতে পারেন।</li>
               </ul>
             </div>
           </div>
@@ -1109,9 +1148,11 @@ ONGOING:
         <div class="cta">
           <a href="https://github.com/openclaw/openclaw/labels/security" class="btn btn-primary">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            View Security Roadmap
+            <!-- original: View Security Roadmap -->
+            সিকিউরিটি রোডম্যাপ দেখেন
           </a>
-          <a href="https://docs.openclaw.ai/security" class="btn btn-secondary">Read Full Documentation</a>
+          <!-- original: <a href="https://docs.openclaw.ai/security" class="btn btn-secondary">Read Full Documentation</a> -->
+          <a href="https://docs.openclaw.ai/security" class="btn btn-secondary">পুরো ডকস পড়ে মাথা নষ্ট করেন</a>
         </div>
 
         <footer>
