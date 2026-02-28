@@ -69,102 +69,168 @@ const bluebubblesIcon = {
 };
 
 const chatProviders = [
-  { name: 'WhatsApp', icon: siIcon(siWhatsapp), color: '#25D366', desc: 'QR pairing via Baileys', docs: 'https://clawhub.ai/skills/wacli' },
-  { name: 'Telegram', icon: siIcon(siTelegram), color: '#26A5E4', desc: 'Bot API via grammY', docs: 'https://docs.openclaw.ai/telegram' },
-  { name: 'Discord', icon: siIcon(siDiscord), color: '#5865F2', desc: 'Servers, channels & DMs', docs: 'https://clawhub.ai/skills/discord' },
-  { name: 'Slack', icon: 'lucide:hash', color: '#E01E5A', desc: 'Workspace apps via Bolt', docs: 'https://clawhub.ai/skills/slack' },
-  { name: 'Signal', icon: siIcon(siSignal), color: '#3A76F0', desc: 'Privacy-focused via signal-cli', docs: 'https://docs.openclaw.ai/channels/signal' },
-  { name: 'iMessage', icon: siIcon(siApple), color: '#007AFF', desc: 'iMessage via imsg (AppleScript bridge)', docs: 'https://github.com/steipete/imsg' },
-  { name: 'iMessage', icon: bluebubblesIcon, color: '#3B82F6', desc: 'iMessage via BlueBubbles server', docs: 'https://docs.openclaw.ai/channels/bluebubbles' },
-  { name: 'Microsoft Teams', icon: 'lucide:users', color: '#6264A7', desc: 'Enterprise support', docs: 'https://docs.openclaw.ai/msteams' },
-  { name: 'Nextcloud Talk', icon: siIcon(siNextcloud), color: '#0082C9', desc: 'Self-hosted Nextcloud chat', docs: 'https://docs.openclaw.ai/channels/nextcloud-talk' },
-  { name: 'Matrix', icon: siIcon(siMatrix), color: '#000000', desc: 'Matrix protocol', docs: 'https://docs.openclaw.ai/channels/matrix' },
-  { name: 'Nostr', icon: 'lucide:message-circle', color: '#8F2CFF', desc: 'Decentralized DMs via NIP-04', docs: 'https://docs.openclaw.ai/channels/nostr' },
-  { name: 'Tlon Messenger', icon: tlonIcon, color: '#FFFFFF', desc: 'P2P ownership-first chat', docs: 'https://docs.urbit.org' },
-  { name: 'Zalo', icon: siIcon(siZalo), color: '#0068FF', desc: 'Zalo Bot API', docs: 'https://docs.openclaw.ai/channels/zalo' },
-  { name: 'Zalo Personal', icon: siIcon(siZalo), color: '#0068FF', desc: 'Personal account via QR login', docs: 'https://docs.openclaw.ai/channels/zalouser' },
-  { name: 'WebChat', icon: 'lucide:globe', color: '#00E5CC', desc: 'Browser-based UI', docs: 'https://docs.openclaw.ai/webchat' },
+  // original desc: 'QR pairing via Baileys'
+  { name: 'WhatsApp', icon: siIcon(siWhatsapp), color: '#25D366', desc: 'বেইলিস দিয়ে QR স্ক্যান করে জোড়া লাগান', docs: 'https://clawhub.ai/skills/wacli' },
+  // original desc: 'Bot API via grammY'
+  { name: 'Telegram', icon: siIcon(siTelegram), color: '#26A5E4', desc: 'গ্রামি (grammY) দিয়ে বট এপিআই', docs: 'https://docs.openclaw.ai/telegram' },
+  // original desc: 'Servers, channels & DMs'
+  { name: 'Discord', icon: siIcon(siDiscord), color: '#5865F2', desc: 'সার্ভার, চ্যানেল আর চিপায় চ্যাটিং (DM)', docs: 'https://clawhub.ai/skills/discord' },
+  // original desc: 'Workspace apps via Bolt'
+  { name: 'Slack', icon: 'lucide:hash', color: '#E01E5A', desc: 'বোল্ট দিয়ে অফিশিয়াল ভাব', docs: 'https://clawhub.ai/skills/slack' },
+  // original desc: 'Privacy-focused via signal-cli'
+  { name: 'Signal', icon: siIcon(siSignal), color: '#3A76F0', desc: 'প্রাইভেসির দোহাই দিয়ে সিগন্যাল-সিএলআই', docs: 'https://docs.openclaw.ai/channels/signal' },
+  // original desc: 'iMessage via imsg (AppleScript bridge)'
+  { name: 'iMessage', icon: siIcon(siApple), color: '#007AFF', desc: 'অ্যাপল স্ক্রিপ্ট দিয়ে আইমেসেজ', docs: 'https://github.com/steipete/imsg' },
+  // original desc: 'iMessage via BlueBubbles server'
+  { name: 'iMessage', icon: bluebubblesIcon, color: '#3B82F6', desc: 'ব্লুবাবল সার্ভার দিয়ে আইমেসেজ', docs: 'https://docs.openclaw.ai/channels/bluebubbles' },
+  // original desc: 'Enterprise support'
+  { name: 'Microsoft Teams', icon: 'lucide:users', color: '#6264A7', desc: 'কর্পোরেট মজদুরি সাপোর্ট', docs: 'https://docs.openclaw.ai/msteams' },
+  // original desc: 'Self-hosted Nextcloud chat'
+  { name: 'Nextcloud Talk', icon: siIcon(siNextcloud), color: '#0082C9', desc: 'নিজের সার্ভারে নেক্সটক্লাউড চ্যাট', docs: 'https://docs.openclaw.ai/channels/nextcloud-talk' },
+  // original desc: 'Matrix protocol'
+  { name: 'Matrix', icon: siIcon(siMatrix), color: '#000000', desc: 'ম্যাট্রিক্স প্রোটোকল', docs: 'https://docs.openclaw.ai/channels/matrix' },
+  // original desc: 'Decentralized DMs via NIP-04'
+  { name: 'Nostr', icon: 'lucide:message-circle', color: '#8F2CFF', desc: 'ডিসেন্ট্রালাইজড ডিএম (NIP-04)', docs: 'https://docs.openclaw.ai/channels/nostr' },
+  // original desc: 'P2P ownership-first chat'
+  { name: 'Tlon Messenger', icon: tlonIcon, color: '#FFFFFF', desc: 'P2P মালিকানার চ্যাট', docs: 'https://docs.urbit.org' },
+  // original desc: 'Zalo Bot API'
+  { name: 'Zalo', icon: siIcon(siZalo), color: '#0068FF', desc: 'জালো বট এপিআই', docs: 'https://docs.openclaw.ai/channels/zalo' },
+  // original desc: 'Personal account via QR login'
+  { name: 'Zalo Personal', icon: siIcon(siZalo), color: '#0068FF', desc: 'QR লগইন দিয়ে পার্সোনাল অ্যাকাউন্ট', docs: 'https://docs.openclaw.ai/channels/zalouser' },
+  // original desc: 'Browser-based UI'
+  { name: 'WebChat', icon: 'lucide:globe', color: '#00E5CC', desc: 'ব্রাউজার বেসড ইন্টারফেস', docs: 'https://docs.openclaw.ai/webchat' },
 ];
 
 const modelProviders = [
-  { name: 'Anthropic', icon: siIcon(siAnthropic), color: '#D4A574', desc: 'Claude Pro/Max + Opus 4.5', docs: 'https://docs.openclaw.ai/models' },
-  { name: 'OpenAI', icon: 'lucide:bot', color: '#00A67E', desc: 'GPT-4, GPT-5, o1', docs: 'https://docs.openclaw.ai/models' },
-  { name: 'Google', icon: siIcon(siGoogle), color: '#4285F4', desc: 'Gemini 2.5 Pro/Flash', docs: 'https://docs.openclaw.ai/models' },
-  { name: 'MiniMax', icon: minimaxIcon, color: '#E91E63', desc: 'MiniMax-M2.1', docs: 'https://docs.openclaw.ai/providers/minimax' },
-  { name: 'xAI', icon: siIcon(siX), color: '#FFFFFF', desc: 'Grok 3 & 4', docs: 'https://docs.openclaw.ai/models' },
-  { name: 'Vercel AI Gateway', icon: siIcon(siVercel), color: '#FFFFFF', desc: 'Hundreds of models, 1 API key', docs: 'https://docs.openclaw.ai/providers/vercel-ai-gateway' },
-  { name: 'OpenRouter', icon: 'lucide:zap', color: '#6366F1', desc: 'Unified API gateway', docs: 'https://docs.openclaw.ai/models' },
-  { name: 'Mistral', icon: siIcon(siMistralai), color: '#FF7000', desc: 'Mistral Large & Codestral', docs: 'https://docs.openclaw.ai/models' },
-  { name: 'DeepSeek', icon: 'lucide:brain', color: '#4D6BFE', desc: 'DeepSeek V3 & R1', docs: 'https://docs.openclaw.ai/models' },
-  { name: 'GLM', icon: 'lucide:message-circle', color: '#00D4AA', desc: 'ChatGLM models', docs: 'https://docs.openclaw.ai/models' },
-  { name: 'Perplexity', icon: siIcon(siPerplexity), color: '#20B8CD', desc: 'Search-augmented AI', docs: 'https://docs.openclaw.ai/models' },
-  { name: 'Hugging Face', icon: siIcon(siHuggingface), color: '#FFD21E', desc: 'Open-source models', docs: 'https://docs.openclaw.ai/models' },
-  { name: 'Local Models', icon: siIcon(siOllama), color: '#FFFFFF', desc: 'Ollama, LM Studio', docs: 'https://docs.openclaw.ai/models' },
+  // original desc: 'Claude Pro/Max + Opus 4.5'
+  { name: 'Anthropic', icon: siIcon(siAnthropic), color: '#D4A574', desc: 'ক্লড প্রো/ম্যাক্স + ওপাস ৪.৫', docs: 'https://docs.openclaw.ai/models' },
+  // original desc: 'GPT-4, GPT-5, o1'
+  { name: 'OpenAI', icon: 'lucide:bot', color: '#00A67E', desc: 'GPT-4, GPT-5, o1 (সবই আছে)', docs: 'https://docs.openclaw.ai/models' },
+  // original desc: 'Gemini 2.5 Pro/Flash'
+  { name: 'Google', icon: siIcon(siGoogle), color: '#4285F4', desc: 'জেমিনি ২.৫ প্রো/ফ্ল্যাশ', docs: 'https://docs.openclaw.ai/models' },
+  // original desc: 'MiniMax-M2.1'
+  { name: 'MiniMax', icon: minimaxIcon, color: '#E91E63', desc: 'মিনিম্যাক্স-M2.1', docs: 'https://docs.openclaw.ai/providers/minimax' },
+  // original desc: 'Grok 3 & 4'
+  { name: 'xAI', icon: siIcon(siX), color: '#FFFFFF', desc: 'গ্রক ৩ এবং ৪', docs: 'https://docs.openclaw.ai/models' },
+  // original desc: 'Hundreds of models, 1 API key'
+  { name: 'Vercel AI Gateway', icon: siIcon(siVercel), color: '#FFFFFF', desc: 'শত শত মডেল, একটাই চাবি (Key)', docs: 'https://docs.openclaw.ai/providers/vercel-ai-gateway' },
+  // original desc: 'Unified API gateway'
+  { name: 'OpenRouter', icon: 'lucide:zap', color: '#6366F1', desc: 'ইউনিফাইড এপিআই গেটওয়ে', docs: 'https://docs.openclaw.ai/models' },
+  // original desc: 'Mistral Large & Codestral'
+  { name: 'Mistral', icon: siIcon(siMistralai), color: '#FF7000', desc: 'মিস্ট্রাল লার্জ আর কোডেস্ট্রাল', docs: 'https://docs.openclaw.ai/models' },
+  // original desc: 'DeepSeek V3 & R1'
+  { name: 'DeepSeek', icon: 'lucide:brain', color: '#4D6BFE', desc: 'ডিপসিক V3 আর R1', docs: 'https://docs.openclaw.ai/models' },
+  // original desc: 'ChatGLM models'
+  { name: 'GLM', icon: 'lucide:message-circle', color: '#00D4AA', desc: 'ChatGLM মডেলস', docs: 'https://docs.openclaw.ai/models' },
+  // original desc: 'Search-augmented AI'
+  { name: 'Perplexity', icon: siIcon(siPerplexity), color: '#20B8CD', desc: 'সার্চ-পাগল এআই', docs: 'https://docs.openclaw.ai/models' },
+  // original desc: 'Open-source models'
+  { name: 'Hugging Face', icon: siIcon(siHuggingface), color: '#FFD21E', desc: 'ওপেন সোর্স মডেলের মেলা', docs: 'https://docs.openclaw.ai/models' },
+  // original desc: 'Ollama, LM Studio'
+  { name: 'Local Models', icon: siIcon(siOllama), color: '#FFFFFF', desc: 'ওলামা, এলএম স্টুডিও (লোকাল মাল)', docs: 'https://docs.openclaw.ai/models' },
 ];
 
 const companionApps = [
-  { name: 'macOS', icon: siIcon(siMacos), color: '#FFFFFF', desc: 'Menu bar app + Voice Wake', docs: 'https://docs.openclaw.ai/macos' },
-  { name: 'iOS', icon: siIcon(siIos), color: '#007AFF', desc: 'Canvas, camera, Voice Wake', docs: 'https://docs.openclaw.ai/ios' },
-  { name: 'Android', icon: siIcon(siAndroid), color: '#34A853', desc: 'Canvas, camera, screen', docs: 'https://docs.openclaw.ai/android' },
-  { name: 'Windows', icon: 'lucide:monitor', color: '#0078D4', desc: 'WSL2 recommended', docs: 'https://docs.openclaw.ai/windows' },
-  { name: 'Linux', icon: siIcon(siLinux), color: '#FCC624', desc: 'Native support', docs: 'https://docs.openclaw.ai/linux' },
+  // original desc: 'Menu bar app + Voice Wake'
+  { name: 'macOS', icon: siIcon(siMacos), color: '#FFFFFF', desc: 'মেনু বার অ্যাপ + ভয়েস ওয়েক', docs: 'https://docs.openclaw.ai/macos' },
+  // original desc: 'Canvas, camera, Voice Wake'
+  { name: 'iOS', icon: siIcon(siIos), color: '#007AFF', desc: 'ক্যানভাস, ক্যামেরা, ভয়েস ওয়েক', docs: 'https://docs.openclaw.ai/ios' },
+  // original desc: 'Canvas, camera, screen'
+  { name: 'Android', icon: siIcon(siAndroid), color: '#34A853', desc: 'ক্যানভাস, ক্যামেরা, স্ক্রিন', docs: 'https://docs.openclaw.ai/android' },
+  // original desc: 'WSL2 recommended'
+  { name: 'Windows', icon: 'lucide:monitor', color: '#0078D4', desc: 'WSL2 ব্যবহার করা ভালো', docs: 'https://docs.openclaw.ai/windows' },
+  // original desc: 'Native support'
+  { name: 'Linux', icon: siIcon(siLinux), color: '#FCC624', desc: 'নেটিভ সাপোর্ট', docs: 'https://docs.openclaw.ai/linux' },
 ];
 
 const productivityApps = [
-  { name: 'Apple Notes', icon: 'lucide:sticky-note', color: '#FFCC00', desc: 'Native macOS/iOS notes', docs: 'https://clawhub.ai/skills/apple-notes' },
-  { name: 'Apple Reminders', icon: 'lucide:check-square', color: '#FF9500', desc: 'Task management', docs: 'https://clawhub.ai/skills/apple-reminders' },
-  { name: 'Things 3', icon: 'lucide:list-todo', color: '#4A90D9', desc: 'GTD task manager', docs: 'https://clawhub.ai/skills/things-mac' },
-  { name: 'Notion', icon: siIcon(siNotion), color: '#FFFFFF', desc: 'Workspace & databases', docs: 'https://clawhub.ai/skills' },
-  { name: 'Obsidian', icon: siIcon(siObsidian), color: '#7C3AED', desc: 'Knowledge graph notes', docs: 'https://clawhub.ai/skills/obsidian' },
-  { name: 'Bear Notes', icon: 'lucide:pen-tool', color: '#DD4C4F', desc: 'Markdown notes', docs: 'https://clawhub.ai/skills' },
-  { name: 'Trello', icon: siIcon(siTrello), color: '#0079BF', desc: 'Kanban boards', docs: 'https://clawhub.ai/skills/trello' },
-  { name: 'GitHub', icon: siIcon(siGithub), color: '#FFFFFF', desc: 'Code, issues, PRs', docs: 'https://clawhub.ai/skills' },
+  // original desc: 'Native macOS/iOS notes'
+  { name: 'Apple Notes', icon: 'lucide:sticky-note', color: '#FFCC00', desc: 'নেটিভ macOS/iOS নোটস', docs: 'https://clawhub.ai/skills/apple-notes' },
+  // original desc: 'Task management'
+  { name: 'Apple Reminders', icon: 'lucide:check-square', color: '#FF9500', desc: 'টাস্ক ম্যানেজমেন্ট', docs: 'https://clawhub.ai/skills/apple-reminders' },
+  // original desc: 'GTD task manager'
+  { name: 'Things 3', icon: 'lucide:list-todo', color: '#4A90D9', desc: 'GTD টাস্ক ম্যানেজার', docs: 'https://clawhub.ai/skills/things-mac' },
+  // original desc: 'Workspace & databases'
+  { name: 'Notion', icon: siIcon(siNotion), color: '#FFFFFF', desc: 'ওয়ার্কস্পেস আর ডেটাবেস', docs: 'https://clawhub.ai/skills' },
+  // original desc: 'Knowledge graph notes'
+  { name: 'Obsidian', icon: siIcon(siObsidian), color: '#7C3AED', desc: 'নলেজ গ্রাফ নোটস', docs: 'https://clawhub.ai/skills/obsidian' },
+  // original desc: 'Markdown notes'
+  { name: 'Bear Notes', icon: 'lucide:pen-tool', color: '#DD4C4F', desc: 'মার্কডাউন নোটস', docs: 'https://clawhub.ai/skills' },
+  // original desc: 'Kanban boards'
+  { name: 'Trello', icon: siIcon(siTrello), color: '#0079BF', desc: 'কানবান বোর্ড', docs: 'https://clawhub.ai/skills/trello' },
+  // original desc: 'Code, issues, PRs'
+  { name: 'GitHub', icon: siIcon(siGithub), color: '#FFFFFF', desc: 'কোড, ইস্যু আর পিআর (PR)', docs: 'https://clawhub.ai/skills' },
 ];
 
 const musicAudio = [
-  { name: 'Spotify', icon: siIcon(siSpotify), color: '#1DB954', desc: 'Music playback control', docs: 'https://clawhub.ai/skills/spotify-player' },
-  { name: 'Sonos', icon: siIcon(siSonos), color: '#FFFFFF', desc: 'Multi-room audio', docs: 'https://clawhub.ai/skills/sonoscli' },
-  { name: 'Shazam', icon: siIcon(siShazam), color: '#0088FF', desc: 'Song recognition', docs: 'https://clawhub.ai/skills/songsee' },
+  // original desc: 'Music playback control'
+  { name: 'Spotify', icon: siIcon(siSpotify), color: '#1DB954', desc: 'গান বাজানো কন্ট্রোল', docs: 'https://clawhub.ai/skills/spotify-player' },
+  // original desc: 'Multi-room audio'
+  { name: 'Sonos', icon: siIcon(siSonos), color: '#FFFFFF', desc: 'মাল্টি-রুম অডিও', docs: 'https://clawhub.ai/skills/sonoscli' },
+  // original desc: 'Song recognition'
+  { name: 'Shazam', icon: siIcon(siShazam), color: '#0088FF', desc: 'গান চেনার যন্তর', docs: 'https://clawhub.ai/skills/songsee' },
 ];
 
 const smartHome = [
-  { name: 'Philips Hue', icon: siIcon(siPhilipshue), color: '#0065D3', desc: 'Smart lighting', docs: 'https://clawhub.ai/skills/openhue' },
-  { name: '8Sleep', icon: 'lucide:bed', color: '#00B4D8', desc: 'Smart mattress', docs: 'https://clawhub.ai/skills/eightctl' },
-  { name: 'Home Assistant', icon: siIcon(siHomeassistant), color: '#41BDF5', desc: 'Home automation hub', docs: 'https://clawhub.ai/skills/homeassistant' },
+  // original desc: 'Smart lighting'
+  { name: 'Philips Hue', icon: siIcon(siPhilipshue), color: '#0065D3', desc: 'স্মার্ট বাতি', docs: 'https://clawhub.ai/skills/openhue' },
+  // original desc: 'Smart mattress'
+  { name: '8Sleep', icon: 'lucide:bed', color: '#00B4D8', desc: 'স্মার্ট তোশক', docs: 'https://clawhub.ai/skills/eightctl' },
+  // original desc: 'Home automation hub'
+  { name: 'Home Assistant', icon: siIcon(siHomeassistant), color: '#41BDF5', desc: 'ঘর সামলানোর হাব', docs: 'https://clawhub.ai/skills/homeassistant' },
 ];
 
 const tools = [
-  { name: 'Browser', icon: siIcon(siGooglechrome), color: '#4285F4', desc: 'Chrome/Chromium control', docs: 'https://clawhub.ai/skills/verify-on-browser' },
-  { name: 'Canvas', icon: 'lucide:monitor-smartphone', color: '#FF4500', desc: 'Visual workspace + A2UI', docs: 'https://docs.openclaw.ai/mac/canvas' },
-  { name: 'Voice', icon: 'lucide:mic', color: '#9B59B6', desc: 'Voice Wake + Talk Mode', docs: 'https://clawhub.ai/skills/voice-transcribe' },
-  { name: 'Gmail', icon: siIcon(siGmail), color: '#EA4335', desc: 'Pub/Sub email triggers', docs: 'https://docs.openclaw.ai/gmail-pubsub' },
-  { name: 'Cron', icon: 'lucide:clock', color: '#F39C12', desc: 'Scheduled tasks', docs: 'https://docs.openclaw.ai/cron' },
-  { name: 'Webhooks', icon: 'lucide:webhook', color: '#1ABC9C', desc: 'External triggers', docs: 'https://docs.openclaw.ai/webhook' },
-  { name: '1Password', icon: siIcon(si1password), color: '#0572EC', desc: 'Secure credentials', docs: 'https://clawhub.ai/skills/1password' },
-  { name: 'Weather', icon: 'lucide:cloud-sun', color: '#FFB300', desc: 'Forecasts & conditions', docs: 'https://clawhub.ai/skills/weather' },
+  // original desc: 'Chrome/Chromium control'
+  { name: 'Browser', icon: siIcon(siGooglechrome), color: '#4285F4', desc: 'ক্রোম/ক্রমিয়াম কন্ট্রোল', docs: 'https://clawhub.ai/skills/verify-on-browser' },
+  // original desc: 'Visual workspace + A2UI'
+  { name: 'Canvas', icon: 'lucide:monitor-smartphone', color: '#FF4500', desc: 'ভিজ্যুয়াল ওয়ার্কস্পেস + A2UI', docs: 'https://docs.openclaw.ai/mac/canvas' },
+  // original desc: 'Voice Wake + Talk Mode'
+  { name: 'Voice', icon: 'lucide:mic', color: '#9B59B6', desc: 'ভয়েস ওয়েক + টক মোড', docs: 'https://clawhub.ai/skills/voice-transcribe' },
+  // original desc: 'Pub/Sub email triggers'
+  { name: 'Gmail', icon: siIcon(siGmail), color: '#EA4335', desc: 'Pub/Sub ইমেইল ট্রিগার', docs: 'https://docs.openclaw.ai/gmail-pubsub' },
+  // original desc: 'Scheduled tasks'
+  { name: 'Cron', icon: 'lucide:clock', color: '#F39C12', desc: 'নির্ধারিত কাজ (Scheduled Tasks)', docs: 'https://docs.openclaw.ai/cron' },
+  // original desc: 'External triggers'
+  { name: 'Webhooks', icon: 'lucide:webhook', color: '#1ABC9C', desc: 'এক্সটার্নাল ট্রিগার', docs: 'https://docs.openclaw.ai/webhook' },
+  // original desc: 'Secure credentials'
+  { name: '1Password', icon: siIcon(si1password), color: '#0572EC', desc: 'গোপন পাসওয়ার্ড', docs: 'https://clawhub.ai/skills/1password' },
+  // original desc: 'Forecasts & conditions'
+  { name: 'Weather', icon: 'lucide:cloud-sun', color: '#FFB300', desc: 'আবহাওয়া বার্তা', docs: 'https://clawhub.ai/skills/weather' },
 ];
 
 const mediaCreative = [
-  { name: 'Image Gen', icon: 'lucide:image', color: '#E91E63', desc: 'AI image generation', docs: 'https://clawhub.ai/skills' },
-  { name: 'GIF Search', icon: 'lucide:search', color: '#00DCDC', desc: 'Find the perfect GIF', docs: 'https://clawhub.ai/skills/gifgrep' },
-  { name: 'Peekaboo', icon: 'lucide:eye', color: '#FF6B6B', desc: 'Screen capture & control', docs: 'https://clawhub.ai/skills/peekaboo' },
-  { name: 'Camera', icon: 'lucide:camera', color: '#607D8B', desc: 'Photo/video capture', docs: 'https://clawhub.ai/skills' },
+  // original desc: 'AI image generation'
+  { name: 'Image Gen', icon: 'lucide:image', color: '#E91E63', desc: 'এআই ইমেজ জেনারেশন', docs: 'https://clawhub.ai/skills' },
+  // original desc: 'Find the perfect GIF'
+  { name: 'GIF Search', icon: 'lucide:search', color: '#00DCDC', desc: 'পারফেক্ট জিআইএফ (GIF) খোঁজা', docs: 'https://clawhub.ai/skills/gifgrep' },
+  // original desc: 'Screen capture & control'
+  { name: 'Peekaboo', icon: 'lucide:eye', color: '#FF6B6B', desc: 'স্ক্রিন ক্যাপচার আর কন্ট্রোল', docs: 'https://clawhub.ai/skills/peekaboo' },
+  // original desc: 'Photo/video capture'
+  { name: 'Camera', icon: 'lucide:camera', color: '#607D8B', desc: 'ফটো/ভিডিও ক্যাপচার', docs: 'https://clawhub.ai/skills' },
 ];
 
 const socialComms = [
-  { name: 'Twitter/X', icon: siIcon(siX), color: '#FFFFFF', desc: 'Tweet, reply, search', docs: 'https://clawhub.ai/skills/bird' },
-  { name: 'Email', icon: 'lucide:mail', color: '#D44638', desc: 'Send & read emails', docs: 'https://clawhub.ai/skills/himalaya' },
+  // original desc: 'Tweet, reply, search'
+  { name: 'Twitter/X', icon: siIcon(siX), color: '#FFFFFF', desc: 'টুইট, রিপ্লাই, সার্চ', docs: 'https://clawhub.ai/skills/bird' },
+  // original desc: 'Send & read emails'
+  { name: 'Email', icon: 'lucide:mail', color: '#D44638', desc: 'ইমেইল পাঠানো আর পড়া', docs: 'https://clawhub.ai/skills/himalaya' },
 ];
 
 const showcase = [
-  { name: 'Tesco Autopilot', icon: 'lucide:shopping-cart', color: '#00539F', desc: 'Automated grocery shopping', docs: 'https://docs.openclaw.ai/start/showcase' },
-  { name: 'Bambu Control', icon: 'lucide:printer', color: '#00AE42', desc: '3D printer management', docs: 'https://docs.openclaw.ai/start/showcase' },
-  { name: 'Oura Ring', icon: 'lucide:heart', color: '#E4B363', desc: 'Health data insights', docs: 'https://docs.openclaw.ai/start/showcase' },
-  { name: 'Food Ordering', icon: 'lucide:utensils-crossed', color: '#FF5A5F', desc: 'Foodora integration', docs: 'https://docs.openclaw.ai/start/showcase' },
+  // original desc: 'Automated grocery shopping'
+  { name: 'Tesco Autopilot', icon: 'lucide:shopping-cart', color: '#00539F', desc: 'অটোমেটিক বাজার সদাই', docs: 'https://docs.openclaw.ai/start/showcase' },
+  // original desc: '3D printer management'
+  { name: 'Bambu Control', icon: 'lucide:printer', color: '#00AE42', desc: '3D প্রিন্টার ম্যানেজমেন্ট', docs: 'https://docs.openclaw.ai/start/showcase' },
+  // original desc: 'Health data insights'
+  { name: 'Oura Ring', icon: 'lucide:heart', color: '#E4B363', desc: 'স্বাস্থ্যের খবরাখবর', docs: 'https://docs.openclaw.ai/start/showcase' },
+  // original desc: 'Foodora integration'
+  { name: 'Food Ordering', icon: 'lucide:utensils-crossed', color: '#FF5A5F', desc: 'ফুডপান্ডা/ফুডোরা ইন্টিগ্রেশন', docs: 'https://docs.openclaw.ai/start/showcase' },
 ];
 ---
 
-<Layout title="Integrations — OpenClaw">
+// original: <Layout title="Integrations — OpenClaw">
+<Layout title="ইন্টিগ্রেশনসমূহ — ওপেনক্ল (Integrations)">
   <div class="stars"></div>
   <div class="nebula"></div>
 

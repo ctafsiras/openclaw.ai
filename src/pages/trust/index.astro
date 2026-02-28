@@ -15,8 +15,10 @@ const langLinks = {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Trust - OpenClaw</title>
-  <meta name="description" content="OpenClaw Security Program - formal security initiative for AI agents that take real-world actions." />
+  <!-- original: <title>Trust - OpenClaw</title> -->
+  <title>বিশ্বাস (Trust) - ওপেনক্ল</title>
+  <!-- original: <meta name="description" content="OpenClaw Security Program - formal security initiative for AI agents that take real-world actions." /> -->
+  <meta name="description" content="ওপেনক্ল সিকিউরিটি প্রোগ্রাম - যেসব এআই এজেন্ট বাস্তব দুনিয়ায় ঘাপলা করতে পারে, তাদের সাইজ করার ফর্মাল উদ্যোগ।" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -654,225 +656,264 @@ const langLinks = {
           </ul>
           <p>By developing the threat model openly, we benefit from collective expertise and build trust through transparency.</p>
 
-          <h3>Threat Model Coverage</h3>
+          <!-- original: <h3>Threat Model Coverage</h3> -->
+          <h3>থ্রেট মডেল কভারেজ (কি কি বাঁশ আমরা ঠেকাই)</h3>
           <div class="table-wrap">
             <table>
               <thead>
                 <tr>
-                  <th>Category</th>
-                  <th>Risks Covered</th>
+                  <!-- original: <th>Category</th> -->
+                  <th>ক্যাটাগরি</th>
+                  <!-- original: <th>Risks Covered</th> -->
+                  <th>যেসব রিস্ক কভার করা হইছে</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td><strong>A. Input Manipulation</strong></td>
-                  <td>Direct prompt injection, indirect injection, tool argument injection, context manipulation</td>
+                  <td>ডাইরেক্ট প্রম্পট ইনজেকশন, ইনডাইরেক্ট ইনজেকশন, টুল আর্গুমেন্ট ইনজেকশন, কন্টেক্সট ম্যানিপুলেশন</td>
                 </tr>
                 <tr>
                   <td><strong>B. Auth & Access</strong></td>
-                  <td>AllowFrom bypass, privilege escalation, cross-session access, API key exposure</td>
+                  <td>অ্যালাউ-ফ্রম (AllowFrom) বাইপাস, প্রিভিলেজ এসকেলেশন, ক্রস-সেশন অ্যাক্সেস, এপিআই কি (API Key) ফাঁস</td>
                 </tr>
                 <tr>
                   <td><strong>C. Data Security</strong></td>
-                  <td>System prompt disclosure, workspace exposure, memory leakage, data exfiltration</td>
+                  <td>সিস্টেম প্রম্পট ফাঁস, ওয়ার্কস্পেস এক্সপোজার, মেমোরি লিকেজ, ডেটা চুরি</td>
                 </tr>
                 <tr>
                   <td><strong>D. Infrastructure</strong></td>
-                  <td>SSRF, gateway exposure, dependency vulnerabilities, file permissions</td>
+                  <td>SSRF, গেটওয়ে এক্সপোজার, ডিপেন্ডেন্সি ঘাপলা, ফাইল পারমিশন</td>
                 </tr>
                 <tr>
                   <td><strong>E. Operations</strong></td>
-                  <td>Logging sensitive data, insufficient monitoring, resource exhaustion, misconfiguration</td>
+                  <td>গোপন ডেটা লগিং, মনিটরিংয়ের অভাব, রিসোর্স শেষ করে ফেলা, ভুল কনফিগারেশন</td>
                 </tr>
                 <tr>
                   <td><strong>F. Supply Chain</strong></td>
-                  <td>ClawHub skills integrity, extension security, dependency vulnerabilities</td>
+                  <td>ক্ল-হাব স্কিলের সততা, এক্সটেনশন সিকিউরিটি, ডিপেন্ডেন্সির দুর্বলতা</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <h3>Threat Model Scope</h3>
+          <!-- original: <h3>Threat Model Scope</h3> -->
+          <h3>থ্রেট মডেল স্কোপ (আওতা)</h3>
           <div class="table-wrap">
             <table>
               <thead>
                 <tr>
-                  <th>Component</th>
-                  <th>Why It's Included</th>
+                  <!-- original: <th>Component</th> -->
+                  <th>কম্পোনেন্ট</th>
+                  <!-- original: <th>Why It's Included</th> -->
+                  <th>কেন ঢোকানো হইছে</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>Core platform (CLI, Gateway, agents, tools)</td>
-                  <td>Primary attack surface</td>
+                  <td>মূল অ্যাটাক সারফেস (যেখানে মাইর খাওয়ার চান্স বেশি)</td>
                 </tr>
                 <tr>
                   <td>ClawHub (clawhub.ai)</td>
-                  <td>Skills marketplace - supply chain risk</td>
+                  <td>স্কিল মার্কেটপ্লেস - সাপ্লাই চেইন রিস্ক</td>
                 </tr>
                 <tr>
                   <td>Mobile apps (iOS, Android)</td>
-                  <td>Agent control interface, credential storage</td>
+                  <td>এজেন্ট কন্ট্রোল ইন্টারফেস, ক্রেডেনশিয়াল স্টোরেজ</td>
                 </tr>
                 <tr>
                   <td>Desktop app (macOS)</td>
-                  <td>Gateway host, system integration</td>
+                  <td>গেটওয়ে হোস্ট, সিস্টেম ইন্টিগ্রেশন</td>
                 </tr>
                 <tr>
                   <td>Extensions and plugins</td>
-                  <td>Third-party code execution</td>
+                  <td>থার্ড-পার্টি কোড চালানো (অন্যের কোড, নিজের রিস্ক)</td>
                 </tr>
                 <tr>
                   <td>Build and release pipeline</td>
-                  <td>Distribution integrity</td>
+                  <td>ডিস্ট্রিবিউশন সততা (ভেজাল আছে কিনা)</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <p>Each risk in the threat model will include description and severity rating, attack examples, current mitigations, known gaps, and user recommendations.</p>
-          <p><strong>The threat model will be open for community contribution via pull requests.</strong></p>
+          <!-- original: <p>Each risk in the threat model will include description and severity rating, attack examples, current mitigations, known gaps, and user recommendations.</p> -->
+          <p>থ্রেট মডেলের প্রত্যেকটা রিস্কের সাথে থাকবে বিবরণ, কতটা ভয়াবহ তার রেটিং, অ্যাটাকের নমুনা, বাঁচার উপায়, কোথায় কোথায় ফাঁকফোকর আছে, আর ইউজারদের জন্য উপদেশ।</p>
+          <!-- original: <p><strong>The threat model will be open for community contribution via pull requests.</strong></p> -->
+          <p><strong>থ্রেট মডেলটা ওপেন থাকবে, পাবলিক চাইলে পুল রিকোয়েস্ট (PR) দিয়ে কন্ট্রিবিউট করতে পারবে।</strong></p>
         </section>
 
         <section class="section">
-          <h2>Phase 2: Product Security Roadmap</h2>
+          <!-- original: <h2>Phase 2: Product Security Roadmap</h2> -->
+          <h2>ফেজ ২: প্রোডাক্ট সিকিউরিটি রোডম্যাপ</h2>
 
-          <h3>Goal</h3>
-          <p>Create a public product security roadmap defining defensive engineering goals, tracked as GitHub issues so the community can follow progress, provide input, and contribute.</p>
+          <!-- original: <h3>Goal</h3> -->
+          <h3>লক্ষ্য (Goal)</h3>
+          <!-- original: <p>Create a public product security roadmap defining defensive engineering goals, tracked as GitHub issues so the community can follow progress, provide input, and contribute.</p> -->
+          <p>একটা পাবলিক সিকিউরিটি রোডম্যাপ বানানো যেখানে ডিফেন্সিভ ইঞ্জিনিয়ারিং গোলগুলো লেখা থাকবে। এগুলো গিটহাব ইস্যু হিসেবে ট্র্যাক করা হবে যাতে পাবলিক প্রোগ্রেস দেখতে পারে, জ্ঞান দিতে পারে, আর সাহায্য করতে পারে।</p>
 
-          <h3>Defensive Engineering Goals</h3>
+          <!-- original: <h3>Defensive Engineering Goals</h3> -->
+          <h3>ডিফেন্সিভ ইঞ্জিনিয়ারিং গোল (বাঁচার প্রস্তুতি)</h3>
           <div class="table-wrap">
             <table>
               <thead>
                 <tr>
-                  <th>Category</th>
-                  <th>Goal</th>
-                  <th>Description</th>
+                  <!-- original: <th>Category</th> -->
+                  <th>ক্যাটাগরি</th>
+                  <!-- original: <th>Goal</th> -->
+                  <th>লক্ষ্য</th>
+                  <!-- original: <th>Description</th> -->
+                  <th>বিবরণ</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td rowspan="3"><strong>Prompt Injection Protection</strong></td>
-                  <td>Input validation</td>
-                  <td>Pattern detection and alerting for injection attempts</td>
+                  <td>ইনপুট ভ্যালিডেশন</td>
+                  <td>প্যাটার্ন ডিটেকশন আর ইনজেকশন চেষ্টার অ্যালার্ট</td>
                 </tr>
                 <tr>
-                  <td>Tool confirmation</td>
-                  <td>Require explicit approval for sensitive actions</td>
+                  <td>টুল কনফার্মেশন</td>
+                  <td>সেনসিটিভ কাজের জন্য স্পষ্ট অনুমোদন (পারমিশন) চাওয়া</td>
                 </tr>
                 <tr>
-                  <td>Context isolation</td>
-                  <td>Prevent cross-session contamination</td>
+                  <td>কন্টেক্সট আইসোলেশন</td>
+                  <td>ক্রস-সেশন দূষণ ঠেকানো (এক সেশনের ভেজাল অন্যটায় না যাওয়া)</td>
                 </tr>
                 <tr>
                   <td rowspan="3"><strong>Privacy Enhancements</strong></td>
-                  <td>System prompt protection</td>
-                  <td>Prevent disclosure of system prompts</td>
+                  <td>সিস্টেম প্রম্পট প্রটেকশন</td>
+                  <td>সিস্টেম প্রম্পট ফাঁস হওয়া ঠেকানো</td>
                 </tr>
                 <tr>
-                  <td>Data minimization</td>
-                  <td>Reduce unnecessary data retention</td>
+                  <td>ডেটা মিনিমাইজেশন</td>
+                  <td>অপ্রয়োজনীয় ডেটা জমিয়ে না রাখা</td>
                 </tr>
                 <tr>
-                  <td>Audit logging</td>
-                  <td>Clear visibility into agent actions</td>
+                  <td>অডিট লগিং</td>
+                  <td>এজেন্ট কী কী আকাম করছে তার পরিষ্কার হিসাব রাখা</td>
                 </tr>
                 <tr>
                   <td rowspan="3"><strong>Access Control</strong></td>
-                  <td>Fine-grained permissions</td>
-                  <td>Per-tool, per-session access controls</td>
+                  <td>ফাইন-গ্রেইনড পারমিশন</td>
+                  <td>টুল আর সেশন অনুযায়ী আলাদা আলাদা পারমিশন</td>
                 </tr>
                 <tr>
-                  <td>Rate limiting</td>
-                  <td>Prevent resource exhaustion</td>
+                  <td>রেট লিমিটিং</td>
+                  <td>রিসোর্স শেষ হয়ে যাওয়া ঠেকানো</td>
                 </tr>
                 <tr>
-                  <td>Spending controls</td>
-                  <td>Hard limits on API costs</td>
+                  <td>খরচ নিয়ন্ত্রণ (Spending controls)</td>
+                  <td>এপিআই খরচের ওপর হার্ড লিমিট বসানো</td>
                 </tr>
                 <tr>
                   <td rowspan="3"><strong>Supply Chain</strong></td>
-                  <td>Skills verification</td>
-                  <td>Integrity checks for ClawHub skills</td>
+                  <td>স্কিল ভেরিফিকেশন</td>
+                  <td>ক্ল-হাব স্কিলের সততা যাচাই করা</td>
                 </tr>
                 <tr>
-                  <td>Dependency auditing</td>
-                  <td>Automated vulnerability scanning</td>
+                  <td>ডিপেন্ডেন্সি অডিটিং</td>
+                  <td>অটোমেটেড ভালনারেবিলিটি স্ক্যানিং</td>
                 </tr>
                 <tr>
-                  <td>Signed releases</td>
-                  <td>Cryptographic verification of updates</td>
+                  <td>সাইন্ড রিলিজ (Signed releases)</td>
+                  <td>আপডেটের ক্রিপ্টোগ্রাফিক ভেরিফিকেশন</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <p>Specific priority issues will be identified through the Phase 3 code review and added to the public roadmap as they are discovered and triaged.</p>
+          <!-- original: <p>Specific priority issues will be identified through the Phase 3 code review and added to the public roadmap as they are discovered and triaged.</p> -->
+          <p>ফেজ ৩-এর কোড রিভিউর মাধ্যমে প্রায়োরিটি ইস্যুগুলো খুঁজে বের করা হবে আর পাবলিক রোডম্যাপে যোগ করা হবে।</p>
         </section>
 
         <section class="section">
-          <h2>Phase 3: Code Review</h2>
+          <!-- original: <h2>Phase 3: Code Review</h2> -->
+          <h2>ফেজ ৩: কোড রিভিউ (পোস্টমর্টেম)</h2>
 
-          <h3>Goal</h3>
-          <p>While the community is already working around the clock to find and address flaws - and we're grateful for every contribution - we recognize this is an open-source project where contributors provide their best effort. Phase 3 is a dedicated, comprehensive security assessment specifically designed to drive out deeply rooted systemic issues and improve overall code quality and user safety.</p>
+          <!-- original: <h3>Goal</h3> -->
+          <h3>লক্ষ্য</h3>
+          <!-- original: <p>While the community is already working around the clock to find and address flaws - and we're grateful for every contribution - we recognize this is an open-source project where contributors provide their best effort. Phase 3 is a dedicated, comprehensive security assessment specifically designed to drive out deeply rooted systemic issues and improve overall code quality and user safety.</p> -->
+          <p>কমিউনিটি অলরেডি দিনরাত খেটে বাগ খুঁজছে আর ঠিক করছে (তাদের অনেক ধন্যবাদ), কিন্তু এটা তো ওপেন সোর্স প্রজেক্ট, সবাই নিজের সাধ্যমতো চেষ্টা করছে। ফেজ ৩ হলো একটা ডেডিকেটেড, আগাগোড়া সিকিউরিটি অ্যাসেসমেন্ট, যার উদ্দেশ্য হলো গভীরে লুকিয়ে থাকা সমস্যাগুলো বের করা আর কোড কোয়ালিটি ও ইউজারের সেফটি বাড়ানো।</p>
 
-          <h3>Scope</h3>
-          <p>The code review covers the entire OpenClaw codebase and ecosystem:</p>
+          <!-- original: <h3>Scope</h3> -->
+          <h3>স্কোপ</h3>
+          <!-- original: <p>The code review covers the entire OpenClaw codebase and ecosystem:</p> -->
+          <p>কোড রিভিউতে পুরো ওপেনক্ল কোডবেস আর ইকোসিস্টেম দেখা হবে:</p>
           <div class="table-wrap">
             <table>
               <thead>
                 <tr>
-                  <th>Area</th>
-                  <th>Path</th>
-                  <th>Why</th>
+                  <!-- original: <th>Area</th> -->
+                  <th>এরিয়া</th>
+                  <!-- original: <th>Path</th> -->
+                  <th>পাথ (Path)</th>
+                  <!-- original: <th>Why</th> -->
+                  <th>কেন</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td>Agent execution</td><td><code>src/agents/</code></td><td>Core attack surface - how agents run</td></tr>
-                <tr><td>Tool implementations</td><td><code>src/agents/tools/</code></td><td>What agents can do - exec, messaging, web</td></tr>
-                <tr><td>Message processing</td><td><code>src/auto-reply/</code></td><td>Entry point for all user input</td></tr>
-                <tr><td>Security utilities</td><td><code>src/security/</code></td><td>Existing security controls</td></tr>
-                <tr><td>Gateway server</td><td><code>src/gateway/</code></td><td>Network-exposed component</td></tr>
-                <tr><td>Authentication</td><td><code>src/*/auth*</code></td><td>Credential handling, API keys</td></tr>
-                <tr><td>Session management</td><td><code>src/config/sessions.ts</code></td><td>Cross-session isolation</td></tr>
-                <tr><td>Pairing and access control</td><td><code>src/pairing/</code>, <code>src/*/access-control*</code></td><td>DM and group gating</td></tr>
-                <tr><td>External content handling</td><td><code>src/security/external-content.ts</code></td><td>Injection defenses</td></tr>
-                <tr><td>macOS desktop app</td><td><code>apps/macos/</code></td><td>Gateway host, system integration</td></tr>
-                <tr><td>iOS mobile app</td><td><code>apps/ios/</code></td><td>Agent control, credential storage</td></tr>
-                <tr><td>Android mobile app</td><td><code>apps/android/</code></td><td>Agent control, credential storage</td></tr>
-                <tr><td>ClawHub</td><td>clawhub.ai</td><td>Skills registry - supply chain risk</td></tr>
-                <tr><td>Official extensions</td><td><code>extensions/</code></td><td>First-party plugins</td></tr>
-                <tr><td>Build and release pipeline</td><td>CI/CD, scripts</td><td>Distribution integrity, signing</td></tr>
+                <tr><td>Agent execution</td><td><code>src/agents/</code></td><td>মূল অ্যাটাক সারফেস - এজেন্ট কীভাবে চলে</td></tr>
+                <tr><td>Tool implementations</td><td><code>src/agents/tools/</code></td><td>এজেন্ট কী করতে পারে - এক্সেকিউশন, মেসেজিং, ওয়েব</td></tr>
+                <tr><td>Message processing</td><td><code>src/auto-reply/</code></td><td>সব ইউজার ইনপুটের ঢোকার রাস্তা</td></tr>
+                <tr><td>Security utilities</td><td><code>src/security/</code></td><td>বিদ্যমান সিকিউরিটি কন্ট্রোল</td></tr>
+                <tr><td>Gateway server</td><td><code>src/gateway/</code></td><td>নেটওয়ার্কে এক্সপোজড কম্পোনেন্ট</td></tr>
+                <tr><td>Authentication</td><td><code>src/*/auth*</code></td><td>ক্রেডেনশিয়াল হ্যান্ডলিং, এপিআই কি</td></tr>
+                <tr><td>Session management</td><td><code>src/config/sessions.ts</code></td><td>ক্রস-সেশন আইসোলেশন</td></tr>
+                <tr><td>Pairing and access control</td><td><code>src/pairing/</code>, <code>src/*/access-control*</code></td><td>DM আর গ্রুপ গেটিং (Gating)</td></tr>
+                <tr><td>External content handling</td><td><code>src/security/external-content.ts</code></td><td>ইনজেকশন ডিফেন্স</td></tr>
+                <tr><td>macOS desktop app</td><td><code>apps/macos/</code></td><td>গেটওয়ে হোস্ট, সিস্টেম ইন্টিগ্রেশন</td></tr>
+                <tr><td>iOS mobile app</td><td><code>apps/ios/</code></td><td>এজেন্ট কন্ট্রোল, ক্রেডেনশিয়াল স্টোরেজ</td></tr>
+                <tr><td>Android mobile app</td><td><code>apps/android/</code></td><td>এজেন্ট কন্ট্রোল, ক্রেডেনশিয়াল স্টোরেজ</td></tr>
+                <tr><td>ClawHub</td><td>clawhub.ai</td><td>স্কিল রেজিস্ট্রি - সাপ্লাই চেইন রিস্ক</td></tr>
+                <tr><td>Official extensions</td><td><code>extensions/</code></td><td>ফার্স্ট-পার্টি প্লাগিন</td></tr>
+                <tr><td>Build and release pipeline</td><td>CI/CD, scripts</td><td>ডিস্ট্রিবিউশন সততা, সাইনিং</td></tr>
               </tbody>
             </table>
           </div>
 
-          <h3>Approach</h3>
+          <!-- original: <h3>Approach</h3> -->
+          <h3>কাজের ধারা (Approach)</h3>
           <ol>
-            <li><strong>Manual code review</strong> - Human-in-the-loop analysis of security-critical paths</li>
-            <li><strong>Automated scanning</strong> - Static analysis, dependency auditing, secret detection</li>
-            <li><strong>Dynamic testing</strong> - Attempting documented attack patterns against running system</li>
-            <li><strong>Architecture review</strong> - Evaluating trust boundaries and data flows</li>
+            <!-- original: <li><strong>Manual code review</strong> - Human-in-the-loop analysis of security-critical paths</li> -->
+            <li><strong>ম্যানুয়াল কোড রিভিউ</strong> - মানুষ দিয়ে সিকিউরিটি-ক্রিটিকাল জায়গাগুলো চেক করা।</li>
+            <!-- original: <li><strong>Automated scanning</strong> - Static analysis, dependency auditing, secret detection</li> -->
+            <li><strong>অটোমেটেড স্ক্যানিং</strong> - স্ট্যাটিক অ্যানালিসিস, ডিপেন্ডেন্সি অডিট, সিক্রেট ডিটেকশন।</li>
+            <!-- original: <li><strong>Dynamic testing</strong> - Attempting documented attack patterns against running system</li> -->
+            <li><strong>ডায়নামিক টেস্টিং</strong> - রানিং সিস্টেমে জানা অ্যাটাক প্যাটার্নগুলো চালিয়ে দেখা।</li>
+            <!-- original: <li><strong>Architecture review</strong> - Evaluating trust boundaries and data flows</li> -->
+            <li><strong>আর্কিটেকচার রিভিউ</strong> - ট্রাস্ট বাউন্ডারি আর ডেটা ফ্লো যাচাই করা।</li>
           </ol>
 
-          <h3>Disclosure</h3>
+          <!-- original: <h3>Disclosure</h3> -->
+          <h3>প্রকাশ করা (Disclosure)</h3>
           <ul>
-            <li>All critical and high findings fixed before public disclosure</li>
-            <li>Findings summary published after remediation</li>
-            <li>Full report available on request</li>
-            <li>CVEs assigned where applicable</li>
+            <!-- original: <li>All critical and high findings fixed before public disclosure</li> -->
+            <li>পাবলিকলি বলার আগে সব ক্রিটিকাল আর হাই রিস্ক ইস্যু ফিক্স করা হবে।</li>
+            <!-- original: <li>Findings summary published after remediation</li> -->
+            <li>ফিক্স করার পর ফাইন্ডিংয়ের সামারি পাবলিশ করা হবে।</li>
+            <!-- original: <li>Full report available on request</li> -->
+            <li>চাইলে ফুল রিপোর্ট পাওয়া যাবে।</li>
+            <!-- original: <li>CVEs assigned where applicable</li> -->
+            <li>প্রযোজ্য ক্ষেত্রে CVE অ্যাসাইন করা হবে।</li>
           </ul>
         </section>
 
         <section class="section">
-          <h2>Phase 4: Security Triage Function</h2>
+          <!-- original: <h2>Phase 4: Security Triage Function</h2> -->
+          <h2>ফেজ ৪: সিকিউরিটি ট্রায়াজ ফাংশন (ঝাড়াই-বাছাই)</h2>
 
-          <h3>Goal</h3>
-          <p>Establish a formal process for receiving, triaging, and responding to security vulnerability reports.</p>
+          <!-- original: <h3>Goal</h3> -->
+          <h3>লক্ষ্য</h3>
+          <!-- original: <p>Establish a formal process for receiving, triaging, and responding to security vulnerability reports.</p> -->
+          <p>সিকিউরিটি ভালনারেবিলিটি রিপোর্ট গ্রহণ, বাছাই এবং তার জবাব দেওয়ার জন্য একটা ফর্মাল প্রসেস দাঁড় করানো।</p>
 
           <div class="report-box">
-            <h4>Report a Vulnerability</h4>
-            <p>We take security reports seriously. Report vulnerabilities directly to the repository where the issue lives:</p>
+            <!-- original: <h4>Report a Vulnerability</h4> -->
+            <h4>ভালনারেবিলিটি রিপোর্ট করুন</h4>
+            <!-- original: <p>We take security reports seriously. Report vulnerabilities directly to the repository where the issue lives:</p> -->
+            <p>আমরা সিকিউরিটি রিপোর্ট সিরিয়াসলি নিই। যেখানে সমস্যা, সেই রিপোজিটরিতে ডাইরেক্ট রিপোর্ট করুন:</p>
             <ul style="margin-top: 12px; margin-bottom: 12px;">
               <li><strong>Core CLI and gateway</strong> - <a href="https://github.com/openclaw/openclaw/security/advisories/new">openclaw/openclaw</a></li>
               <li><strong>macOS desktop app</strong> - <a href="https://github.com/openclaw/openclaw/security/advisories/new">openclaw/openclaw</a> (apps/macos)</li>
@@ -881,156 +922,195 @@ const langLinks = {
               <li><strong>ClawHub</strong> - <a href="https://github.com/openclaw/clawhub/security/advisories/new">openclaw/clawhub</a></li>
               <li><strong>Trust and threat model</strong> - <a href="https://github.com/openclaw/trust/issues/new">openclaw/trust</a></li>
             </ul>
-            <p>For issues that don't fit a specific repo, or if you're unsure, email <span class="email-display" style="display: inline; padding: 4px 8px; font-size: 13px;">security@openclaw.ai</span> and we'll route it.</p>
+            <!-- original: <p>For issues that don't fit a specific repo, or if you're unsure, email <span class="email-display" style="display: inline; padding: 4px 8px; font-size: 13px;">security@openclaw.ai</span> and we'll route it.</p> -->
+            <p>যদি না বুঝেন কোন রিপোতে রিপোর্ট করবেন, বা স্পেসিফিক কোনো রিপোতে না পড়ে, তবে মেইল করুন <span class="email-display" style="display: inline; padding: 4px 8px; font-size: 13px;">security@openclaw.ai</span> তে, আমরা দেখে নেব।</p>
 
-            <h4 style="margin-top: 24px;">Required in Reports</h4>
+            <!-- original: <h4 style="margin-top: 24px;">Required in Reports</h4> -->
+            <h4 style="margin-top: 24px;">রিপোর্টে যা যা লাগবে</h4>
             <div class="fields">
-              <span class="field">Title</span>
-              <span class="field">Severity Assessment</span>
-              <span class="field">Impact</span>
-              <span class="field">Affected Component</span>
-              <span class="field">Technical Reproduction</span>
-              <span class="field">Demonstrated Impact</span>
-              <span class="field">Environment</span>
-              <span class="field">Remediation Advice</span>
+              <span class="field">Title (শিরোনাম)</span>
+              <span class="field">Severity Assessment (ভয়াবহতা)</span>
+              <span class="field">Impact (প্রভাব)</span>
+              <span class="field">Affected Component (কোথায় লাগছে)</span>
+              <span class="field">Technical Reproduction (কীভাবে ঘটাবো)</span>
+              <span class="field">Demonstrated Impact (প্রমাণ)</span>
+              <span class="field">Environment (পরিবেশ)</span>
+              <span class="field">Remediation Advice (সমাধান)</span>
             </div>
-            <p style="margin-top: 16px; font-size: 14px;">Reports without reproduction steps, demonstrated impact, and remediation advice will be deprioritized. Given the volume of AI-generated scanner findings, we must ensure we're receiving vetted reports from researchers who understand the issues.</p>
+            <!-- original: <p style="margin-top: 16px; font-size: 14px;">Reports without reproduction steps, demonstrated impact, and remediation advice will be deprioritized. Given the volume of AI-generated scanner findings, we must ensure we're receiving vetted reports from researchers who understand the issues.</p> -->
+            <p style="margin-top: 16px; font-size: 14px;">রিপ্রোডাকশন স্টেপ, প্রমাণ আর সমাধান ছাড়া রিপোর্টগুলো পাত্তা দেওয়া হবে না। এআই জেনারেটেড স্ক্যানার রিপোর্টের ঠেলায় আমরা অতিষ্ঠ, তাই আমরা চাই সেসব রিসার্চারদের রিপোর্ট যারা আসলেই সমস্যাটা বুঝে।</p>
           </div>
 
-          <h3>Response SLAs</h3>
+          <!-- original: <h3>Response SLAs</h3> -->
+          <h3>রেসপন্স SLA (সময়সীমা)</h3>
           <div class="table-wrap">
             <table>
               <thead>
                 <tr>
-                  <th>Severity</th>
-                  <th>Definition</th>
-                  <th>First Response</th>
-                  <th>Triage</th>
-                  <th>Fix Target</th>
+                  <!-- original: <th>Severity</th> -->
+                  <th>ভয়াবহতা (Severity)</th>
+                  <!-- original: <th>Definition</th> -->
+                  <th>সংজ্ঞা</th>
+                  <!-- original: <th>First Response</th> -->
+                  <th>প্রথম সাড়া</th>
+                  <!-- original: <th>Triage</th> -->
+                  <th>ট্রায়াজ</th>
+                  <!-- original: <th>Fix Target</th> -->
+                  <th>ফিক্স টার্গেট</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td><strong>Critical</strong></td>
-                  <td>RCE, auth bypass, mass data exposure</td>
-                  <td>24 hours</td>
-                  <td>48 hours</td>
-                  <td>7 days</td>
+                  <td>RCE, অথ বাইপাস, ব্যাপক ডেটা ফাঁস</td>
+                  <td>২৪ ঘণ্টা</td>
+                  <td>৪৮ ঘণ্টা</td>
+                  <td>৭ দিন</td>
                 </tr>
                 <tr>
                   <td><strong>High</strong></td>
-                  <td>Significant impact, single-user scope</td>
-                  <td>48 hours</td>
-                  <td>5 days</td>
-                  <td>30 days</td>
+                  <td>বড় ইমপ্যাক্ট, সিঙ্গেল-ইউজার স্কোপ</td>
+                  <td>৪৮ ঘণ্টা</td>
+                  <td>৫ দিন</td>
+                  <td>৩০ দিন</td>
                 </tr>
                 <tr>
                   <td><strong>Medium</strong></td>
-                  <td>Limited impact, requires specific conditions</td>
-                  <td>5 days</td>
-                  <td>14 days</td>
-                  <td>90 days</td>
+                  <td>সীমিত ইমপ্যাক্ট, নির্দিষ্ট কন্ডিশন লাগে</td>
+                  <td>৫ দিন</td>
+                  <td>১৪ দিন</td>
+                  <td>৯০ দিন</td>
                 </tr>
                 <tr>
                   <td><strong>Low</strong></td>
-                  <td>Minor issues, defense in depth</td>
-                  <td>14 days</td>
-                  <td>30 days</td>
-                  <td>Best effort</td>
+                  <td>ছোটখাটো ইস্যু, ডিফেন্স ইন ডেপথ</td>
+                  <td>১৪ দিন</td>
+                  <td>৩০ দিন</td>
+                  <td>চেষ্টা করবো (Best effort)</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <h3>Our Commitments</h3>
+          <!-- original: <h3>Our Commitments</h3> -->
+          <h3>আমাদের ওয়াদা</h3>
           <ul>
-            <li>Acknowledge all complete reports within 48 hours</li>
-            <li>Provide status updates at least every 14 days</li>
-            <li>Credit researchers in advisories (unless anonymity requested)</li>
-            <li>Not pursue legal action against good-faith security research</li>
-            <li>Consider bounties for qualifying critical/high findings (case-by-case)</li>
+            <!-- original: <li>Acknowledge all complete reports within 48 hours</li> -->
+            <li>সব কমপ্লিট রিপোর্টের প্রাপ্তি স্বীকার ৪৮ ঘণ্টার মধ্যে।</li>
+            <!-- original: <li>Provide status updates at least every 14 days</li> -->
+            <li>অন্তত প্রতি ১৪ দিনে স্ট্যাটাস আপডেট দেওয়া।</li>
+            <!-- original: <li>Credit researchers in advisories (unless anonymity requested)</li> -->
+            <li>গবেষকদের নাম উল্লেখ করা (যদি না তারা নাম লুকাতে চান)।</li>
+            <!-- original: <li>Not pursue legal action against good-faith security research</li> -->
+            <li>সৎ উদ্দেশ্যে করা সিকিউরিটি রিসার্চের বিরুদ্ধে আইনি ব্যবস্থা না নেওয়া।</li>
+            <!-- original: <li>Consider bounties for qualifying critical/high findings (case-by-case)</li> -->
+            <li>যোগ্য ক্রিটিকাল/হাই ফাইন্ডিংয়ের জন্য বাউন্টি (পুরস্কার) বিবেচনা করা (কেস টু কেস)।</li>
           </ul>
         </section>
 
         <section class="section">
-          <h2>Security & Trust</h2>
-          <p><strong>Jamieson O'Reilly</strong> (<a href="https://twitter.com/theonejvo">@theonejvo</a>) is Security & Trust at OpenClaw.</p>
-          <p>Jamieson is the founder of <a href="https://dvuln.com">Dvuln</a>, co-founder of <a href="https://tryaether.ai">Aether AI</a> (the world's most dangerous AI, in your corner), a member of the CREST Advisory Council, and brings extensive experience in offensive security, penetration testing, and security program development.</p>
+          <!-- original: <h2>Security & Trust</h2> -->
+          <h2>সিকিউরিটি ও ট্রাস্ট (বিশ্বাস)</h2>
+          <p><strong>Jamieson O'Reilly</strong> (<a href="https://twitter.com/theonejvo">@theonejvo</a>) ওপেনক্ল-এর সিকিউরিটি ও ট্রাস্ট দেখছেন।</p>
+          <p>Jamieson হলেন <a href="https://dvuln.com">Dvuln</a>-এর ফাউন্ডার, <a href="https://tryaether.ai">Aether AI</a>-এর কো-ফাউন্ডার (দুনিয়ার সবচেয়ে ডেঞ্জারাস এআই, কিন্তু আপনার পক্ষে), এবং CREST অ্যাডভাইজরি কাউন্সিলের মেম্বার। অফেন্সিভ সিকিউরিটি, পেনিট্রেশন টেস্টিং আর সিকিউরিটি প্রোগ্রাম ডেভেলপমেন্টে উনার বিশাল অভিজ্ঞতা আছে।</p>
 
-          <h3>Responsibilities</h3>
+          <!-- original: <h3>Responsibilities</h3> -->
+          <h3>দায়িত্বসমূহ</h3>
           <ul>
-            <li>Lead threat modeling and risk assessment</li>
-            <li>Scope and oversee code review</li>
-            <li>Establish triage process and response procedures</li>
-            <li>Review security-critical code changes</li>
-            <li>Provide guidance on security architecture decisions</li>
+            <!-- original: <li>Lead threat modeling and risk assessment</li> -->
+            <li>থ্রেট মডেলিং আর রিস্ক অ্যাসেসমেন্টে নেতৃত্ব দেওয়া।</li>
+            <!-- original: <li>Scope and oversee code review</li> -->
+            <li>কোড রিভিউ স্কোপ করা আর তদারকি করা।</li>
+            <!-- original: <li>Establish triage process and response procedures</li> -->
+            <li>ট্রায়াজ প্রসেস আর রেসপন্স প্রসিডিউর ঠিক করা।</li>
+            <!-- original: <li>Review security-critical code changes</li> -->
+            <li>সিকিউরিটি-ক্রিটিকাল কোড চেঞ্জগুলো রিভিউ করা।</li>
+            <!-- original: <li>Provide guidance on security architecture decisions</li> -->
+            <li>সিকিউরিটি আর্কিটেকচার ডিসিশনে জ্ঞান দেওয়া।</li>
           </ul>
         </section>
 
         <section class="section">
-          <h2>Current Security Posture</h2>
-          <p>OpenClaw already has security controls in place. Understanding what exists helps users configure their deployments appropriately.</p>
+          <!-- original: <h2>Current Security Posture</h2> -->
+          <h2>বর্তমান সিকিউরিটি অবস্থা</h2>
+          <!-- original: <p>OpenClaw already has security controls in place. Understanding what exists helps users configure their deployments appropriately.</p> -->
+          <p>ওপেনক্ল-তে আগে থেকেই কিছু সিকিউরিটি কন্ট্রোল আছে। কী আছে সেটা জানলে ইউজাররা তাদের ডিপ্লয়মেন্ট ঠিকঠাক কনফিগার করতে পারবে।</p>
 
-          <h3>Secure by Default</h3>
+          <!-- original: <h3>Secure by Default</h3> -->
+          <h3>বাই-ডিফল্ট সিকিউর</h3>
           <div class="checks">
             <div class="check">
               <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="3"><path d="M5 12l5 5L19 7"/></svg></div>
               <div>
                 <strong>DM Policy: Pairing</strong>
-                <p style="margin: 4px 0 0; font-size: 14px;">Unknown senders must complete pairing flow with expiring code</p>
+                <!-- original: <p style="margin: 4px 0 0; font-size: 14px;">Unknown senders must complete pairing flow with expiring code</p> -->
+                <p style="margin: 4px 0 0; font-size: 14px;">অচেনা সেন্ডারদের এক্সপায়ারিং কোড দিয়ে পেয়ারিং ফ্লো শেষ করতে হয়</p>
               </div>
             </div>
             <div class="check">
               <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="3"><path d="M5 12l5 5L19 7"/></svg></div>
               <div>
                 <strong>Exec Security: Deny</strong>
-                <p style="margin: 4px 0 0; font-size: 14px;">Commands not on allowlist are denied by default, user prompted for approval</p>
+                <!-- original: <p style="margin: 4px 0 0; font-size: 14px;">Commands not on allowlist are denied by default, user prompted for approval</p> -->
+                <p style="margin: 4px 0 0; font-size: 14px;">অ্যালাউ-লিস্টে না থাকা কমান্ড বাই-ডিফল্ট ডিনাই হয়, ইউজারের অ্যাপ্রুভাল লাগে</p>
               </div>
             </div>
             <div class="check">
               <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="3"><path d="M5 12l5 5L19 7"/></svg></div>
               <div>
                 <strong>Default AllowFrom: Self-only</strong>
-                <p style="margin: 4px 0 0; font-size: 14px;">If not configured, only your own number can DM the agent</p>
+                <!-- original: <p style="margin: 4px 0 0; font-size: 14px;">If not configured, only your own number can DM the agent</p> -->
+                <p style="margin: 4px 0 0; font-size: 14px;">কনফিগার না করলে, শুধু আপনার নিজের নাম্বারই এজেন্টকে ডিএম করতে পারবে</p>
               </div>
             </div>
             <div class="check">
               <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="3"><path d="M5 12l5 5L19 7"/></svg></div>
               <div>
                 <strong>Session Isolation</strong>
-                <p style="margin: 4px 0 0; font-size: 14px;">Conversations are isolated per session key</p>
+                <!-- original: <p style="margin: 4px 0 0; font-size: 14px;">Conversations are isolated per session key</p> -->
+                <p style="margin: 4px 0 0; font-size: 14px;">কথাবার্তা সেশন কি (Session Key) অনুযায়ী আলাদা থাকে</p>
               </div>
             </div>
             <div class="check">
               <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="3"><path d="M5 12l5 5L19 7"/></svg></div>
               <div>
                 <strong>SSRF Protection</strong>
-                <p style="margin: 4px 0 0; font-size: 14px;">Internal IPs and localhost blocked in web_fetch</p>
+                <!-- original: <p style="margin: 4px 0 0; font-size: 14px;">Internal IPs and localhost blocked in web_fetch</p> -->
+                <p style="margin: 4px 0 0; font-size: 14px;">web_fetch-এ ইন্টারনাল আইপি আর লোকালহোস্ট ব্লক করা থাকে</p>
               </div>
             </div>
             <div class="check">
               <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="3"><path d="M5 12l5 5L19 7"/></svg></div>
               <div>
                 <strong>Gateway Auth Required</strong>
-                <p style="margin: 4px 0 0; font-size: 14px;">WebSocket connections must authenticate</p>
+                <!-- original: <p style="margin: 4px 0 0; font-size: 14px;">WebSocket connections must authenticate</p> -->
+                <p style="margin: 4px 0 0; font-size: 14px;">WebSocket কানেকশনের জন্য অথেন্টিকেশন লাগে</p>
               </div>
             </div>
           </div>
 
-          <h3>Verify Your Setup</h3>
+          <!-- original: <h3>Verify Your Setup</h3> -->
+          <h3>আপনার সেটআপ চেক করুন</h3>
           <pre><code>openclaw security audit --deep</code></pre>
-          <p>Key items to verify:</p>
+          <!-- original: <p>Key items to verify:</p> -->
+          <p>যেসব জিনিস চেক করতে হবে:</p>
           <ul>
-            <li>DM policy is <code>pairing</code> or <code>allowlist</code> (not <code>open</code>)</li>
-            <li><code>allowFrom</code> is configured for your channels</li>
-            <li>Exec security is not set to <code>full</code> unless intended</li>
-            <li>Gateway is bound to loopback or behind authentication</li>
-            <li>Workspace doesn't contain secrets</li>
+            <!-- original: <li>DM policy is <code>pairing</code> or <code>allowlist</code> (not <code>open</code>)</li> -->
+            <li>DM পলিসি <code>pairing</code> বা <code>allowlist</code> হতে হবে (ভুলেও <code>open</code> রাখবেন না)</li>
+            <!-- original: <li><code>allowFrom</code> is configured for your channels</li> -->
+            <li>আপনার চ্যানেলের জন্য <code>allowFrom</code> কনফিগার করা আছে কিনা</li>
+            <!-- original: <li>Exec security is not set to <code>full</code> unless intended</li> -->
+            <li>ইচ্ছাকৃত না হলে Exec security যেন <code>full</code> না থাকে</li>
+            <!-- original: <li>Gateway is bound to loopback or behind authentication</li> -->
+            <li>গেটওয়ে লুপব্যাক-এ বাউন্ড করা বা অথেন্টিকেশনের পেছনে আছে কিনা</li>
+            <!-- original: <li>Workspace doesn't contain secrets</li> -->
+            <li>ওয়ার্কস্পেসে যেন কোনো গোপন তথ্য না থাকে</li>
           </ul>
         </section>
 
         <section class="section">
-          <h2>Timeline</h2>
+          <!-- original: <h2>Timeline</h2> -->
+          <h2>টাইমলাইন (সময়সূচি)</h2>
           <pre>WEEK 1-2: Phase 1 - Transparency
 ├── Threat model development begins (open for contribution)
 ├── Security configuration guide drafted
